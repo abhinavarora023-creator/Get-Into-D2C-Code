@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /_authenticated/
+Disallow: /admin
+Disallow: /thank-you
+
+Sitemap: https://getintod2c.in/sitemap.xml
