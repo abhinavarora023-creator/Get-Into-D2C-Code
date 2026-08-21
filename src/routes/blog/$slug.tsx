@@ -1,16 +1,17 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { BLOG_POSTS, getPost, type BlogSection } from "@/lib/blog-posts";
-
-import { getBlogPostSchemas, createJsonLdScript } from "@/lib/seo-schema";
+import { type BlogSection } from "@/lib/blog-posts";
+import { getBlogPostBySlug, getAllBlogPosts, type UnifiedBlogPost } from "@/lib/blog-service";
+import { getBlogPostSchemas, getFAQPageSchema, createJsonLdScript } from "@/lib/seo-schema";
 
 export const Route = createFileRoute("/blog/$slug")({
   component: BlogPostPage,
-  loader: ({ params }) => {
-    const post = getPost(params.slug);
+  loader: async ({ params }) => {
+    const post = await getBlogPostBySlug(params.slug);
     if (!post) throw notFound();
-    const others = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
+    const allPosts = await getAllBlogPosts();
+    const others = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
     return { post, others };
   },
   head: ({ loaderData }) => {
@@ -18,10 +19,16 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) {
       return { meta: [{ title: "Not found, GetIntoD2C" }] };
     }
+
+    const schemas = getBlogPostSchemas(post).map(createJsonLdScript);
+    if (post.faqs && post.faqs.length > 0) {
+      schemas.push(createJsonLdScript(getFAQPageSchema(post.faqs)));
+    }
+
     return {
       meta: [
-        { title: `${post.title} — GetIntoD2C` },
-        { name: "description", content: post.excerpt },
+        { title: `${post.meta_title || post.title} — GetIntoD2C` },
+        { name: "description", content: post.meta_description || post.excerpt },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.excerpt },
         { property: "og:type", content: "article" },
@@ -41,7 +48,7 @@ export const Route = createFileRoute("/blog/$slug")({
           href: `https://getintod2c.in/blog/${post.slug}`,
         },
       ],
-      scripts: getBlogPostSchemas(post).map(createJsonLdScript),
+      scripts: schemas,
     };
   },
 });
@@ -193,6 +200,20 @@ function BlogPostPage() {
           )}
         </div>
 
+        {post.faqs && post.faqs.length > 0 && (
+          <section className="mt-16 rounded-3xl border border-black/10 bg-black/[0.02] p-8 md:p-10">
+            <h2 className="font-serif text-2xl md:text-3xl">Frequently Asked Questions</h2>
+            <div className="mt-6 space-y-6">
+              {post.faqs.map((faq: { question: string; answer: string }, idx: number) => (
+                <div key={idx} className="border-b border-black/10 pb-4 last:border-b-0 last:pb-0">
+                  <h3 className="font-medium text-lg text-black">{faq.question}</h3>
+                  <p className="mt-2 text-black/70 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         <div className="mt-16 rounded-3xl bg-[#0a0a0a] p-8 text-white md:p-12">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#e11d2a]">
             Build Your Brand
@@ -220,7 +241,7 @@ function BlogPostPage() {
             Keep reading
           </p>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
-            {others.map((p) => (
+            {others.map((p: UnifiedBlogPost) => (
               <Link
                 key={p.slug}
                 to="/blog/$slug"

@@ -1,12 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { BLOG_POSTS } from "@/lib/blog-posts";
-
+import { getAllBlogPosts, type UnifiedBlogPost } from "@/lib/blog-service";
 import { getBlogIndexSchemas, createJsonLdScript } from "@/lib/seo-schema";
 
 export const Route = createFileRoute("/blog/")({
   component: BlogIndex,
+  loader: async () => {
+    const posts = await getAllBlogPosts();
+    return { posts };
+  },
   head: () => ({
     meta: [
       {
@@ -54,6 +57,8 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogIndex() {
+  const { posts } = Route.useLoaderData();
+
   return (
     <main className="relative bg-white text-[#0a0a0a]">
       <Nav />
@@ -72,7 +77,7 @@ function BlogIndex() {
 
       <section className="mx-auto max-w-5xl px-6 pb-32">
         <div className="grid gap-6 md:gap-8">
-          {BLOG_POSTS.map((post) => (
+          {posts.map((post: UnifiedBlogPost) => (
             <Link
               key={post.slug}
               to="/blog/$slug"

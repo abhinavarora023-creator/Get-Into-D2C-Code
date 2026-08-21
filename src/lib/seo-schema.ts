@@ -421,3 +421,22 @@ export function getBlogPostSchemas(post: BlogPost) {
 
   return [breadcrumbSchema, blogPostingSchema];
 }
+
+/**
+ * 6. Dynamic FAQ Page Schema for AI Blog Posts with FAQs
+ */
+export function getFAQPageSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
