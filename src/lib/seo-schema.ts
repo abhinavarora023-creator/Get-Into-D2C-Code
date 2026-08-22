@@ -300,11 +300,18 @@ export function getRegistrationsSchemas() {
       name: "GetIntoD2C",
       url: SITE_URL,
     },
-    performer: {
-      "@type": "Person",
-      name: "Gaurav Virmani",
-      jobTitle: "Founder @ Go Whipped, 3X D2C Founder",
-    },
+    performer: [
+      {
+        "@type": "Person",
+        name: "Gaurav Virmani",
+        jobTitle: "Founder @ Go Whipped, 3X D2C Founder",
+      },
+      {
+        "@type": "Person",
+        name: "Kandarp Malhotra",
+        jobTitle: "Growth Marketer @ XTCY",
+      },
+    ],
     offers: {
       "@type": "Offer",
       price: "59",

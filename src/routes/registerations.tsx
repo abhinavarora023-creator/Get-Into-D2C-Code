@@ -188,7 +188,7 @@ function RegisterPage() {
           categories, along with investors who back early-stage consumer brands in India.
         </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        <div className="mt-8 grid gap-4 lg:grid-cols-2">
           {/* Gaurav Virmani */}
           <div className="flex flex-col items-center gap-4 rounded-2xl border border-black/[0.06] bg-white p-6 text-center shadow-[0_1px_2px_rgba(0,0,0,0.04)] sm:flex-row sm:items-start sm:gap-5 sm:p-5 sm:text-left">
             <img
@@ -208,6 +208,28 @@ function RegisterPage() {
               <div className="mt-2 text-xl font-semibold text-[#0a0a0a]">Gaurav Virmani</div>
               <p className="mt-1 text-sm leading-relaxed text-[#0a0a0a]/60">
                 Founder @ Go Whipped, 3X D2C Founder
+              </p>
+            </div>
+          </div>
+
+          {/* Kandarp Malhotra */}
+          <div className="flex flex-col items-center gap-4 rounded-2xl border border-black/[0.06] bg-white p-6 text-center shadow-[0_1px_2px_rgba(0,0,0,0.04)] sm:flex-row sm:items-start sm:gap-5 sm:p-5 sm:text-left">
+            <img
+              src="/kandarp-malhotra.jpeg"
+              alt="Kandarp Malhotra"
+              width={1104}
+              height={1427}
+              loading="lazy"
+              decoding="async"
+              className="h-28 w-28 flex-none rounded-2xl object-cover sm:h-32 sm:w-32"
+            />
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#e11d2a]">
+                Guest speaker
+              </div>
+              <div className="mt-2 text-xl font-semibold text-[#0a0a0a]">Kandarp Malhotra</div>
+              <p className="mt-1 text-sm leading-relaxed text-[#0a0a0a]/60">
+                Growth Marketer @ XTCY, scaling consumer brands across Blinkit, Zepto & Instamart
               </p>
             </div>
           </div>
