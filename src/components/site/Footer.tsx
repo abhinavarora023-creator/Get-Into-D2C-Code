@@ -35,9 +35,39 @@ export function Footer() {
             </a>
           </nav>
         </div>
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-black/40 pt-8 text-[11px] uppercase tracking-[0.3em] text-[#0a0a0a]/50 md:flex-row md:items-center">
-          <div>© 2025 GetIntoD2C</div>
-          <div>Made with care, in India.</div>
+        <div className="mt-12 flex flex-col items-start justify-between gap-6 border-t border-black/40 pt-8 md:flex-row md:items-center">
+          <div className="flex flex-col gap-2 text-[11px] uppercase tracking-[0.3em] text-[#0a0a0a]/50">
+            <div>© 2025 GetIntoD2C</div>
+            <div>Made with care, in India.</div>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#0a0a0a]/60">
+              Official Partners:
+            </span>
+            <div className="flex items-center gap-2">
+              <div className="rounded-xl border border-black/10 bg-white px-2 py-1 shadow-sm">
+                <img
+                  src="/cashfree-certified-partner.png"
+                  alt="Cashfree Payments Certified Partner"
+                  className="h-7 w-auto object-contain"
+                />
+              </div>
+              <div className="rounded-xl border border-black/10 bg-white px-2 py-1 shadow-sm">
+                <img
+                  src="/meta-partner-logo.png"
+                  alt="Meta Partner"
+                  className="h-5 w-auto object-contain"
+                />
+              </div>
+              <div className="rounded-xl border border-black/10 bg-white px-2 py-1 shadow-sm">
+                <img
+                  src="/razorpay-partner-logo.png"
+                  alt="Razorpay Partner"
+                  className="h-4 w-auto object-contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
