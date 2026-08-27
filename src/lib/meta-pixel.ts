@@ -50,7 +50,7 @@ export function trackPageView() {
 
 export function trackEvent(
   eventName: string,
-  data?: Record<string, string | number | boolean | null | undefined>
+  data?: Record<string, string | number | boolean | null | undefined>,
 ) {
   if (typeof window === "undefined" || !window.fbq) return;
   if (data) {

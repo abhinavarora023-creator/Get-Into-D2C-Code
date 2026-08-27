@@ -9,18 +9,11 @@ interface SectionHeaderProps {
   align?: "left" | "center";
 }
 
-export function SectionHeader({
-  eyebrow,
-  title,
-  subtitle,
-  align = "left",
-}: SectionHeaderProps) {
+export function SectionHeader({ eyebrow, title, subtitle, align = "left" }: SectionHeaderProps) {
   const alignCls = align === "center" ? "text-center items-center" : "text-left items-start";
   return (
     <div className={`mb-14 flex flex-col gap-6 ${alignCls}`}>
-      <div className="text-[11px] uppercase tracking-[0.32em] text-[#e11d2a]">
-        {eyebrow}
-      </div>
+      <div className="text-[11px] uppercase tracking-[0.32em] text-[#e11d2a]">{eyebrow}</div>
       <motion.h2
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +24,9 @@ export function SectionHeader({
         {title}
       </motion.h2>
       {subtitle && (
-        <p className={`max-w-xl text-base text-[#0a0a0a]/70 md:text-lg ${align === "center" ? "mx-auto" : ""}`}>
+        <p
+          className={`max-w-xl text-base text-[#0a0a0a]/70 md:text-lg ${align === "center" ? "mx-auto" : ""}`}
+        >
           {subtitle}
         </p>
       )}

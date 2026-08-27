@@ -48,13 +48,11 @@ export function Problem() {
           className="mt-16 grid gap-10 border-t border-black/60 pt-10 md:grid-cols-[2fr_1fr]"
         >
           <p className="max-w-xl text-lg leading-relaxed text-[#0a0a0a]/75">
-            Every plateau has a reason. We find it, name it, and give you the
-            sequence to break through, with the calm of people who have done
-            this at scale.
+            Every plateau has a reason. We find it, name it, and give you the sequence to break
+            through, with the calm of people who have done this at scale.
           </p>
           <p className="text-serif-italic text-2xl leading-snug text-[#0a0a0a]/70 md:text-right">
-            "A brand is not what you say it is. It is what your customer feels
-            when they hold it."
+            "A brand is not what you say it is. It is what your customer feels when they hold it."
           </p>
         </motion.div>
       </div>

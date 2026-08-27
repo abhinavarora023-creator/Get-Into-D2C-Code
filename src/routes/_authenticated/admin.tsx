@@ -74,10 +74,7 @@ type ApplicationRow = {
 
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
-    meta: [
-      { title: "Admin — GetIntoD2C" },
-      { name: "robots", content: "noindex" },
-    ],
+    meta: [{ title: "Admin — GetIntoD2C" }, { name: "robots", content: "noindex" }],
   }),
   component: AdminPage,
 });
@@ -130,8 +127,8 @@ function AdminPage() {
         <div className="max-w-md rounded-3xl border border-black/10 bg-white p-10 text-center">
           <h1 className="font-display text-3xl">Not an admin</h1>
           <p className="mt-3 text-sm text-[#0a0a0a]/65">
-            Your account ({email}) does not have admin access. Ask an existing
-            admin to grant it, or sign in with an admin account.
+            Your account ({email}) does not have admin access. Ask an existing admin to grant it, or
+            sign in with an admin account.
           </p>
           <button
             onClick={signOut}
@@ -149,10 +146,7 @@ function AdminPage() {
       <header className="sticky top-0 z-40 border-b border-black/10 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-4">
-            <a
-              href="/"
-              className="font-display text-lg leading-none text-[#0a0a0a]"
-            >
+            <a href="/" className="font-display text-lg leading-none text-[#0a0a0a]">
               GetIntoD2C
             </a>
             <span className="rounded-full border border-black/15 bg-[#f4f4f4] px-3 py-1 text-[10px] uppercase tracking-[0.32em] text-[#0a0a0a]/60">
@@ -160,9 +154,7 @@ function AdminPage() {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="hidden text-xs text-[#0a0a0a]/60 sm:inline">
-              {email}
-            </span>
+            <span className="hidden text-xs text-[#0a0a0a]/60 sm:inline">{email}</span>
             <button
               onClick={signOut}
               className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white px-4 py-2 text-xs uppercase tracking-[0.28em] text-[#0a0a0a]/70 hover:bg-[#f4f4f4]"
@@ -175,10 +167,7 @@ function AdminPage() {
           <TabButton active={tab === "events"} onClick={() => setTab("events")}>
             <Calendar className="h-4 w-4" /> Events
           </TabButton>
-          <TabButton
-            active={tab === "applications"}
-            onClick={() => setTab("applications")}
-          >
+          <TabButton active={tab === "applications"} onClick={() => setTab("applications")}>
             <Inbox className="h-4 w-4" /> Applications
           </TabButton>
         </div>
@@ -222,9 +211,7 @@ const eventSchema = z.object({
   city: z.string().trim().min(1, "City is required").max(80),
   venue: z.string().trim().max(160).optional().or(z.literal("")),
   event_date: z.string().max(40).optional().or(z.literal("")),
-  capacity: z
-    .union([z.string().length(0), z.coerce.number().int().min(1).max(10000)])
-    .optional(),
+  capacity: z.union([z.string().length(0), z.coerce.number().int().min(1).max(10000)]).optional(),
   theme: z.string().trim().max(160).optional().or(z.literal("")),
   description: z.string().trim().max(2000).optional().or(z.literal("")),
   status: z.enum(["upcoming", "past"]),
@@ -276,8 +263,7 @@ function EventsPanel() {
             Upcoming & past editions
           </h2>
           <p className="mt-2 text-sm text-[#0a0a0a]/65">
-            The featured event is shown on the public page. Toggle the star to
-            mark it.
+            The featured event is shown on the public page. Toggle the star to mark it.
           </p>
         </div>
         <button
@@ -322,13 +308,9 @@ function EventsPanel() {
                       <Star className="h-3 w-3" /> Featured
                     </span>
                   )}
-                  <span className="text-[#0a0a0a]/45">
-                    order {e.sort_order}
-                  </span>
+                  <span className="text-[#0a0a0a]/45">order {e.sort_order}</span>
                 </div>
-                <h3 className="mt-3 font-display text-xl text-[#0a0a0a] md:text-2xl">
-                  {e.name}
-                </h3>
+                <h3 className="mt-3 font-display text-xl text-[#0a0a0a] md:text-2xl">{e.name}</h3>
                 <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#0a0a0a]/65">
                   <span className="inline-flex items-center gap-1.5">
                     <MapPin className="h-3.5 w-3.5" /> {e.city}
@@ -347,8 +329,7 @@ function EventsPanel() {
                 </div>
                 {e.theme && (
                   <div className="mt-2 text-sm text-[#0a0a0a]/70">
-                    <em className="text-serif-italic text-[#e11d2a]">Theme:</em>{" "}
-                    {e.theme}
+                    <em className="text-serif-italic text-[#e11d2a]">Theme:</em> {e.theme}
                   </div>
                 )}
               </div>
@@ -421,8 +402,7 @@ function EventFormDialog({
       city: parsed.data.city,
       venue: parsed.data.venue || null,
       event_date: parsed.data.event_date || null,
-      capacity:
-        typeof parsed.data.capacity === "number" ? parsed.data.capacity : null,
+      capacity: typeof parsed.data.capacity === "number" ? parsed.data.capacity : null,
       theme: parsed.data.theme || null,
       description: parsed.data.description || null,
       status: parsed.data.status,
@@ -433,10 +413,7 @@ function EventFormDialog({
 
     let error;
     if (initial) {
-      ({ error } = await supabase
-        .from("events")
-        .update(payload)
-        .eq("id", initial.id));
+      ({ error } = await supabase.from("events").update(payload).eq("id", initial.id));
     } else {
       ({ error } = await supabase.from("events").insert(payload));
     }
@@ -495,9 +472,7 @@ function EventFormDialog({
           <FieldWrap label="Date (free text, e.g. 'March 12, 2026')">
             <input
               value={values.event_date ?? ""}
-              onChange={(e) =>
-                setValues({ ...values, event_date: e.target.value })
-              }
+              onChange={(e) => setValues({ ...values, event_date: e.target.value })}
               maxLength={40}
               className="input-adm"
             />
@@ -528,9 +503,7 @@ function EventFormDialog({
             <textarea
               rows={4}
               value={values.description ?? ""}
-              onChange={(e) =>
-                setValues({ ...values, description: e.target.value })
-              }
+              onChange={(e) => setValues({ ...values, description: e.target.value })}
               maxLength={2000}
               className="input-adm resize-none rounded-2xl"
             />
@@ -538,9 +511,7 @@ function EventFormDialog({
           <FieldWrap label="Status">
             <Select
               value={values.status}
-              onValueChange={(v) =>
-                setValues({ ...values, status: v as "upcoming" | "past" })
-              }
+              onValueChange={(v) => setValues({ ...values, status: v as "upcoming" | "past" })}
             >
               <SelectTrigger className="input-adm">
                 <SelectValue />
@@ -554,9 +525,7 @@ function EventFormDialog({
           <FieldWrap label="Seats note (e.g. 'Limited Seats · 32 Founders')">
             <input
               value={values.seats_note ?? ""}
-              onChange={(e) =>
-                setValues({ ...values, seats_note: e.target.value })
-              }
+              onChange={(e) => setValues({ ...values, seats_note: e.target.value })}
               maxLength={80}
               className="input-adm"
             />
@@ -566,9 +535,7 @@ function EventFormDialog({
               type="number"
               min={0}
               value={values.sort_order}
-              onChange={(e) =>
-                setValues({ ...values, sort_order: Number(e.target.value) })
-              }
+              onChange={(e) => setValues({ ...values, sort_order: Number(e.target.value) })}
               className="input-adm"
             />
           </FieldWrap>
@@ -576,9 +543,7 @@ function EventFormDialog({
             <input
               type="checkbox"
               checked={values.is_featured}
-              onChange={(e) =>
-                setValues({ ...values, is_featured: e.target.checked })
-              }
+              onChange={(e) => setValues({ ...values, is_featured: e.target.checked })}
               className="h-4 w-4"
             />
             Feature this event on the public page (only one at a time)
@@ -630,9 +595,7 @@ function defaults(initial: EventRow | null): EventFormValues {
     capacity: initial.capacity ?? ("" as unknown as number),
     theme: initial.theme ?? "",
     description: initial.description ?? "",
-    status: (initial.status === "past" ? "past" : "upcoming") as
-      | "upcoming"
-      | "past",
+    status: (initial.status === "past" ? "past" : "upcoming") as "upcoming" | "past",
     is_featured: initial.is_featured,
     seats_note: initial.seats_note ?? "",
     sort_order: initial.sort_order,
@@ -650,9 +613,7 @@ function FieldWrap({
 }) {
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
-      <label className="text-[11px] uppercase tracking-[0.28em] text-[#0a0a0a]/60">
-        {label}
-      </label>
+      <label className="text-[11px] uppercase tracking-[0.28em] text-[#0a0a0a]/60">{label}</label>
       {children}
     </div>
   );
@@ -688,14 +649,8 @@ function ApplicationsPanel() {
     [apps, filter],
   );
 
-  const setStatus = async (
-    id: string,
-    status: (typeof STATUSES)[number],
-  ) => {
-    const { error } = await supabase
-      .from("applications")
-      .update({ status })
-      .eq("id", id);
+  const setStatus = async (id: string, status: (typeof STATUSES)[number]) => {
+    const { error } = await supabase.from("applications").update({ status }).eq("id", id);
     if (error) return toast.error(error.message);
     toast.success("Status updated");
     setSelected((s) => (s && s.id === id ? { ...s, status } : s));
@@ -704,10 +659,7 @@ function ApplicationsPanel() {
 
   const remove = async (id: string) => {
     if (!confirm("Delete this application?")) return;
-    const { error } = await supabase
-      .from("applications")
-      .delete()
-      .eq("id", id);
+    const { error } = await supabase.from("applications").delete().eq("id", id);
     if (error) return toast.error(error.message);
     toast.success("Application deleted");
     setSelected(null);
@@ -724,9 +676,7 @@ function ApplicationsPanel() {
   return (
     <section>
       <div className="mb-6">
-        <h2 className="font-display text-3xl leading-tight md:text-4xl">
-          Applications
-        </h2>
+        <h2 className="font-display text-3xl leading-tight md:text-4xl">Applications</h2>
         <p className="mt-2 text-sm text-[#0a0a0a]/65">
           Every submission from the /for-founders page lands here.
         </p>
@@ -746,9 +696,7 @@ function ApplicationsPanel() {
             {s}
             <span
               className={`rounded-full px-1.5 text-[10px] ${
-                filter === s
-                  ? "bg-white/15 text-white"
-                  : "bg-[#0a0a0a]/5 text-[#0a0a0a]/60"
+                filter === s ? "bg-white/15 text-white" : "bg-[#0a0a0a]/5 text-[#0a0a0a]/60"
               }`}
             >
               {counts[s] ?? 0}
@@ -783,15 +731,10 @@ function ApplicationsPanel() {
             </thead>
             <tbody>
               {filtered.map((a) => (
-                <tr
-                  key={a.id}
-                  className="border-t border-black/5 hover:bg-[#f4f4f4]/60"
-                >
+                <tr key={a.id} className="border-t border-black/5 hover:bg-[#f4f4f4]/60">
                   <td className="px-5 py-4">
                     <div className="font-medium">{a.full_name}</div>
-                    <div className="text-xs text-[#0a0a0a]/55">
-                      {a.designation}
-                    </div>
+                    <div className="text-xs text-[#0a0a0a]/55">{a.designation}</div>
                   </td>
                   <td className="px-5 py-4">{a.brand}</td>
                   <td className="px-5 py-4 text-[#0a0a0a]/70">{a.revenue}</td>
@@ -842,9 +785,7 @@ function ApplicationsPanel() {
                   <div className="text-[10px] uppercase tracking-[0.32em] text-[#e11d2a]">
                     Application
                   </div>
-                  <h3 className="mt-2 font-display text-3xl leading-tight">
-                    {selected.full_name}
-                  </h3>
+                  <h3 className="mt-2 font-display text-3xl leading-tight">{selected.full_name}</h3>
                   <p className="mt-1 text-sm text-[#0a0a0a]/60">
                     {selected.designation} · {selected.brand}
                   </p>
@@ -862,10 +803,7 @@ function ApplicationsPanel() {
                   icon={Mail}
                   label="Email"
                   value={
-                    <a
-                      href={`mailto:${selected.email}`}
-                      className="underline underline-offset-2"
-                    >
+                    <a href={`mailto:${selected.email}`} className="underline underline-offset-2">
                       {selected.email}
                     </a>
                   }
@@ -874,10 +812,7 @@ function ApplicationsPanel() {
                   icon={Phone}
                   label="Phone"
                   value={
-                    <a
-                      href={`tel:${selected.phone}`}
-                      className="underline underline-offset-2"
-                    >
+                    <a href={`tel:${selected.phone}`} className="underline underline-offset-2">
                       {selected.phone}
                     </a>
                   }
@@ -922,11 +857,7 @@ function ApplicationsPanel() {
                     }
                   />
                 )}
-                <Detail
-                  icon={Users}
-                  label="Monthly revenue"
-                  value={selected.revenue}
-                />
+                <Detail icon={Users} label="Monthly revenue" value={selected.revenue} />
               </dl>
 
               <div className="mt-6 rounded-2xl border border-black/10 bg-[#f4f4f4] p-5">
@@ -998,9 +929,7 @@ function Detail({
     <div className="flex items-start gap-3 rounded-2xl border border-black/10 bg-white px-4 py-3">
       <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#0a0a0a]/50" />
       <div className="min-w-0 flex-1">
-        <dt className="text-[10px] uppercase tracking-[0.28em] text-[#0a0a0a]/55">
-          {label}
-        </dt>
+        <dt className="text-[10px] uppercase tracking-[0.28em] text-[#0a0a0a]/55">{label}</dt>
         <dd className="mt-0.5 break-words text-sm text-[#0a0a0a]">{value}</dd>
       </div>
     </div>

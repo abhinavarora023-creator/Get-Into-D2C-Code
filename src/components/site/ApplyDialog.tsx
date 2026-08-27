@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { ArrowUpRight, CheckCircle2, Loader2 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowUpRight, CheckCircle2, Loader2, MessageCircle, Copy, Check } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -12,6 +12,33 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdaqelrv";
+const WHATSAPP_COMMUNITY_URL = "https://chat.whatsapp.com/JBPmdKjiv7kAc4H8B0vXJk";
+
+export function openCommunityApplyDialog() {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("gid2c:open-apply"));
+  }
+}
+
+export function GlobalApplyDialog() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener("gid2c:open-apply", handler);
+
+    if (
+      typeof window !== "undefined" &&
+      (window.location.search.includes("apply") || window.location.hash.includes("apply"))
+    ) {
+      setOpen(true);
+    }
+
+    return () => window.removeEventListener("gid2c:open-apply", handler);
+  }, []);
+
+  return <ApplyDialog open={open} onOpenChange={setOpen} />;
+}
 
 type Props = {
   open: boolean;
@@ -21,6 +48,13 @@ type Props = {
 export function ApplyDialog({ open, onOpenChange }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(WHATSAPP_COMMUNITY_URL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -63,12 +97,56 @@ export function ApplyDialog({ open, onOpenChange }: Props) {
           </DialogHeader>
 
           {status === "success" ? (
-            <div className="mt-8 rounded-2xl border border-[#e11d2a]/20 bg-[#fff5f6] p-6 text-center">
-              <CheckCircle2 className="mx-auto h-10 w-10 text-[#e11d2a]" strokeWidth={1.5} />
-              <h3 className="mt-4 font-display text-2xl text-[#0a0a0a]">Application received.</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#0a0a0a]/70">
-                We'll be in touch on WhatsApp once we've reviewed it. In the meantime,
-                keep building.
+            <div className="mt-6 rounded-3xl border border-[#25D366]/30 bg-[#f0fdf4] p-6 text-center shadow-[0_8px_30px_-10px_rgba(37,211,102,0.2)]">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]">
+                <CheckCircle2 className="h-8 w-8" strokeWidth={2} />
+              </div>
+              <h3 className="mt-4 font-display text-2xl font-semibold text-[#0a0a0a]">
+                Application submitted! 🎉
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#0a0a0a]/75">
+                Thank you for applying. You can now directly join the private{" "}
+                <b>GetIntoD2C Founders' WhatsApp Community</b> below:
+              </p>
+
+              <div className="mt-6 space-y-3">
+                <a
+                  href={WHATSAPP_COMMUNITY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-[0_10px_25px_-8px_rgba(37,211,102,0.6)] transition hover:bg-[#20bd5a]"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Join WhatsApp Community Directly
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+
+                <div className="flex items-center justify-between rounded-2xl border border-black/10 bg-white px-4 py-2.5 text-xs text-[#0a0a0a]/70">
+                  <span className="truncate pr-2 font-mono text-[11px]">
+                    chat.whatsapp.com/JBPmdKjiv7kAc4H8B0vXJk
+                  </span>
+                  <button
+                    type="button"
+                    onClick={handleCopy}
+                    className="inline-flex shrink-0 items-center gap-1 font-medium text-[#0a0a0a] hover:text-[#25D366]"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="h-3.5 w-3.5 text-[#25D366]" />
+                        <span className="text-[#25D366]">Copied</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-3.5 w-3.5" />
+                        <span>Copy</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              <p className="mt-4 text-xs text-[#0a0a0a]/50">
+                Click the button above to open WhatsApp and enter the group chat directly.
               </p>
             </div>
           ) : (
@@ -98,9 +176,7 @@ export function ApplyDialog({ open, onOpenChange }: Props) {
                 placeholder="https://linkedin.com/in/..."
               />
 
-              {error && (
-                <p className="text-sm text-[#e11d2a]">{error}</p>
-              )}
+              {error && <p className="text-sm text-[#e11d2a]">{error}</p>}
 
               <button
                 type="submit"

@@ -36,13 +36,11 @@ export function Process() {
               GetintoD2C Process
             </div>
             <h2 className="font-display text-4xl leading-[1.02] tracking-tight text-[#0a0a0a] md:text-6xl lg:text-7xl">
-              Methodical, <span className="text-serif-italic">warm</span>, and
-              built for founders.
+              Methodical, <span className="text-serif-italic">warm</span>, and built for founders.
             </h2>
           </div>
           <p className="max-w-sm text-serif-italic text-xl leading-snug text-[#0a0a0a]/70 md:text-right">
-            "We combine the rigor of a supply-chain operator with the eye of a
-            creative director."
+            "We combine the rigor of a supply-chain operator with the eye of a creative director."
           </p>
         </div>
 
@@ -66,9 +64,7 @@ export function Process() {
                 <h3 className="mt-4 font-display text-2xl text-[#0a0a0a] md:text-3xl">
                   {step.title}
                 </h3>
-                <p className="mt-4 text-base leading-relaxed text-[#0a0a0a]/70">
-                  {step.desc}
-                </p>
+                <p className="mt-4 text-base leading-relaxed text-[#0a0a0a]/70">{step.desc}</p>
               </div>
             </motion.div>
           ))}

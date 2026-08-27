@@ -24,7 +24,7 @@ export function TrustedBy() {
     <section className="relative border-y border-black/40 bg-[#ffffff] py-16">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 text-center text-[11px] uppercase tracking-[0.32em] text-[#e11d2a]">
-          Founders and brands we have built with
+          Build with the team that has worked on brands like
         </div>
       </div>
       <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">

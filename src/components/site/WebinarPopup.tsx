@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ArrowRight, Calendar, Clock } from "lucide-react";
+import { X, ArrowRight, Play, Users } from "lucide-react";
 import { trackEvent } from "@/lib/meta-pixel";
 
 const STORAGE_KEY = "gid2c_webinar_popup_dismissed";
@@ -64,42 +64,34 @@ export function WebinarPopup() {
 
             <div className="px-7 pb-7 pt-9">
               <span className="text-[10px] uppercase tracking-[0.35em] text-[#e11d2a]">
-                Live Workshop
+                Recorded Masterclass · Free Access
               </span>
               <h2 className="mt-4 font-display text-3xl leading-tight text-[#0a0a0a]">
                 The Proven Playbook to Build a D2C Brand
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-[#0a0a0a]/60">
-                One live session with founders who have built it: sourcing, first customers, pricing
-                and scaling. No theory.
+                Watch the complete recorded session with founders who have built it: sourcing, first
+                customers, pricing, unit economics, and quick commerce scaling.
               </p>
 
               <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#0a0a0a]/60">
                 <span className="inline-flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5 text-[#e11d2a]" /> 26th August 2026
+                  <Play className="h-3.5 w-3.5 text-[#e11d2a]" /> Full Video Recording
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <Clock className="h-3.5 w-3.5 text-[#e11d2a]" /> 4:00 PM IST
-                </span>
-              </div>
-
-              <div className="mt-6 flex items-baseline gap-3">
-                <span className="text-lg font-medium text-[#0a0a0a]/35 line-through">₹200</span>
-                <span className="text-4xl font-semibold tracking-tight text-[#0a0a0a]">₹59</span>
-                <span className="rounded-full bg-[#e11d2a]/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-[#e11d2a]">
-                  Limited offer
+                  <Users className="h-3.5 w-3.5 text-[#e11d2a]" /> 4 Panelists & Founders
                 </span>
               </div>
 
               <a
-                href="/registerations"
+                href="/webinars/proven-playbook-to-build-a-d2c-brand"
                 onClick={() => {
-                  trackEvent("InitiateCheckout", { value: 59, currency: "INR" });
+                  trackEvent("ViewContent", { content_name: "Webinar Recording" });
                   close();
                 }}
                 className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#e11d2a] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#b8151f]"
               >
-                Reserve My Seat — ₹59
+                Watch Recording Now
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
               <button

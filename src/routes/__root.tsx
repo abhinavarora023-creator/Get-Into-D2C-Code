@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { initMetaPixel, trackPageView } from "../lib/meta-pixel";
 import { initClarity } from "../lib/clarity";
+import { GlobalApplyDialog } from "../components/site/ApplyDialog";
 
 function NotFoundComponent() {
   return (
@@ -180,7 +181,6 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-
 function AnalyticsTracker() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
@@ -204,6 +204,7 @@ function RootComponent() {
       <AnalyticsTracker />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <GlobalApplyDialog />
     </QueryClientProvider>
   );
 }

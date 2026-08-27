@@ -21,6 +21,7 @@ import { Footer } from "@/components/site/Footer";
 import { MagneticButton } from "@/components/site/MagneticButton";
 import { ApplyDialog } from "@/components/site/ApplyDialog";
 
+import { openCommunityApplyDialog } from "@/components/site/ApplyDialog";
 import { getForFoundersSchemas, createJsonLdScript } from "@/lib/seo-schema";
 
 const ApplyCtx = createContext<() => void>(() => {});
@@ -30,8 +31,7 @@ export const Route = createFileRoute("/for-founders")({
   head: () => ({
     meta: [
       {
-        title:
-          "For Founders — Exclusive D2C Founders Community & Launch Studio | GetIntoD2C",
+        title: "For Founders — Exclusive D2C Founders Community & Launch Studio | GetIntoD2C",
       },
       {
         name: "description",
@@ -45,8 +45,7 @@ export const Route = createFileRoute("/for-founders")({
       },
       {
         property: "og:title",
-        content:
-          "For Founders — Exclusive D2C Founders Community & Launch Studio",
+        content: "For Founders — Exclusive D2C Founders Community & Launch Studio",
       },
       {
         property: "og:description",
@@ -141,8 +140,7 @@ const FAQS = [
 ];
 
 function ForFoundersPage() {
-  const [open, setOpen] = useState(false);
-  const openApply = useCallback(() => setOpen(true), []);
+  const openApply = useCallback(() => openCommunityApplyDialog(), []);
 
   return (
     <ApplyCtx.Provider value={openApply}>
@@ -157,7 +155,6 @@ function ForFoundersPage() {
         <FinalCta />
         <Footer />
         <StickyMobileCTA />
-        <ApplyDialog open={open} onOpenChange={setOpen} />
       </main>
     </ApplyCtx.Provider>
   );
@@ -191,9 +188,8 @@ function Hero() {
           initial={{ opacity: 1, y: 0 }}
           className="mt-10 max-w-2xl text-base leading-relaxed text-[#0a0a0a]/75 md:text-xl"
         >
-          A curated, WhatsApp-only space where early-stage D2C founders connect,
-          share what's actually working, and learn from each other — quietly, honestly,
-          without an audience.
+          A curated, WhatsApp-only space where early-stage D2C founders connect, share what's
+          actually working, and learn from each other — quietly, honestly, without an audience.
         </motion.p>
 
         <motion.div
@@ -241,8 +237,8 @@ function WhySection() {
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-[#0a0a0a]/70 md:text-lg">
-            Small on purpose. Curated with care. Built for founders who'd rather
-            trade notes than trade pitches.
+            Small on purpose. Curated with care. Built for founders who'd rather trade notes than
+            trade pitches.
           </p>
         </div>
 
@@ -285,8 +281,8 @@ function WhoItsFor() {
             Not for everyone. <span className="text-serif-italic">On purpose.</span>
           </h2>
           <p className="mt-6 text-base leading-relaxed text-[#0a0a0a]/70 md:text-lg">
-            We keep the group small so every conversation stays honest. Here's
-            who fits — and who doesn't.
+            We keep the group small so every conversation stays honest. Here's who fits — and who
+            doesn't.
           </p>
         </div>
 
@@ -363,9 +359,7 @@ function WhatsInside() {
               <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-black/15 bg-[#f4f4f4] text-[#0a0a0a]">
                 <MessageCircle className="h-5 w-5" strokeWidth={1.5} />
               </div>
-              <p className="text-base leading-relaxed text-[#0a0a0a]/85 md:text-lg">
-                {line}
-              </p>
+              <p className="text-base leading-relaxed text-[#0a0a0a]/85 md:text-lg">{line}</p>
             </motion.div>
           ))}
         </div>
@@ -388,8 +382,7 @@ function WhatsInside() {
 function SocialProof() {
   const quotes = [
     {
-      quote:
-        "The one group chat I actually open. Everyone here is building something.",
+      quote: "The one group chat I actually open. Everyone here is building something.",
       role: "Founder, Skincare",
     },
     {
@@ -398,8 +391,7 @@ function SocialProof() {
       role: "Founder, Beverage",
     },
     {
-      quote:
-        "It's the first D2C group I've been in with zero pitches and zero ego.",
+      quote: "It's the first D2C group I've been in with zero pitches and zero ego.",
       role: "Founder, Home & Living",
     },
   ];
@@ -444,9 +436,7 @@ function FAQSection() {
     <section className="bg-gradient-warm relative py-28 md:py-36">
       <div className="mx-auto max-w-3xl px-6">
         <div className="mb-14 text-center">
-          <div className="mb-6 text-[11px] uppercase tracking-[0.32em] text-[#e11d2a]">
-            FAQs
-          </div>
+          <div className="mb-6 text-[11px] uppercase tracking-[0.32em] text-[#e11d2a]">FAQs</div>
           <h2 className="font-display text-4xl leading-[1.02] tracking-tight text-[#0a0a0a] md:text-6xl">
             Answers, <span className="text-serif-italic">honestly.</span>
           </h2>
@@ -479,8 +469,7 @@ function FinalCta() {
           Come Sit At The Table
         </div>
         <h2 className="font-display text-4xl leading-[1.02] tracking-tight text-[#ffffff] md:text-6xl lg:text-7xl">
-          Ready to connect with founders{" "}
-          <span className="text-serif-italic">who get it?</span>
+          Ready to connect with founders <span className="text-serif-italic">who get it?</span>
         </h2>
         <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-[#ffffff]/75 md:text-lg">
           The application takes two minutes. We read every one, personally.

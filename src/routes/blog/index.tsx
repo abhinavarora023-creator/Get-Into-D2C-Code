@@ -10,8 +10,7 @@ export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       {
-        title:
-          "D2C Journal & Playbooks — Case Studies, Unit Economics & GTM | GetIntoD2C",
+        title: "D2C Journal & Playbooks — Case Studies, Unit Economics & GTM | GetIntoD2C",
       },
       {
         name: "description",
@@ -25,8 +24,7 @@ export const Route = createFileRoute("/blog/")({
       },
       {
         property: "og:title",
-        content:
-          "D2C Journal & Playbooks — Case Studies, Unit Economics & GTM | GetIntoD2C",
+        content: "D2C Journal & Playbooks — Case Studies, Unit Economics & GTM | GetIntoD2C",
       },
       {
         property: "og:description",
@@ -58,15 +56,13 @@ function BlogIndex() {
     <main className="relative bg-white text-[#0a0a0a]">
       <Nav />
       <section className="mx-auto max-w-5xl px-6 pb-16 pt-40 md:pt-48">
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#e11d2a]">
-          Journal
-        </p>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#e11d2a]">Journal</p>
         <h1 className="mt-4 font-serif text-5xl leading-[1.05] md:text-6xl">
           Field notes for D2C founders.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-black/70">
-          Case studies, playbooks and lessons from the brands rewriting Indian
-          consumer. Written for founders in the trenches.
+          Case studies, playbooks and lessons from the brands rewriting Indian consumer. Written for
+          founders in the trenches.
         </p>
       </section>
 
@@ -93,10 +89,7 @@ function BlogIndex() {
               <p className="mt-4 text-black/70 md:text-lg">{post.excerpt}</p>
               <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#0a0a0a]">
                 Read the piece
-                <span
-                  aria-hidden
-                  className="transition-transform group-hover:translate-x-1"
-                >
+                <span aria-hidden className="transition-transform group-hover:translate-x-1">
                   →
                 </span>
               </span>

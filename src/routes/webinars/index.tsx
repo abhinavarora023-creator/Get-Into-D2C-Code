@@ -1,15 +1,15 @@
 "use client";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Play, Sparkles, ArrowRight, Users } from "lucide-react";
+import { Play, Sparkles, ArrowRight, Users, Video, Calendar, Layers, Award } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { openCommunityApplyDialog } from "@/components/site/ApplyDialog";
 import { WEBINARS } from "@/lib/webinars";
 import { getWebinarsIndexSchemas, createJsonLdScript } from "@/lib/seo-schema";
 
-export const Route = createFileRoute("/registerations")({
-  component: RegistrationsIndexPage,
+export const Route = createFileRoute("/webinars/")({
+  component: WebinarsIndexPage,
   head: () => ({
     meta: [
       {
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/registerations")({
           "Recorded teardowns, founder round-tables, and actionable D2C playbooks for Indian consumer founders.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/registerations" },
+      { property: "og:url", content: "/webinars" },
       { property: "og:image", content: "/webinar-speakers-panel.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
@@ -45,14 +45,14 @@ export const Route = createFileRoute("/registerations")({
       { name: "twitter:image", content: "/webinar-speakers-panel.png" },
     ],
     links: [
-      { rel: "canonical", href: "https://getintod2c.in/registerations" },
+      { rel: "canonical", href: "https://getintod2c.in/webinars" },
       { rel: "preload", as: "image", href: "/webinar-speakers-panel.png" },
     ],
     scripts: getWebinarsIndexSchemas().map(createJsonLdScript),
   }),
 });
 
-function RegistrationsIndexPage() {
+function WebinarsIndexPage() {
   const featured = WEBINARS[0];
 
   return (

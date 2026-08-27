@@ -63,14 +63,14 @@ export function Services() {
               Full-Stack Launch Capabilities
             </div>
             <h2 className="font-display text-4xl leading-[1.02] tracking-tight text-[#0a0a0a] md:text-6xl lg:text-7xl">
-              Six services.<br />
+              Six services.
+              <br />
               <span className="text-serif-italic">One launchpad.</span>
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-[#0a0a0a]/70 md:text-lg">
-            Not an agency retainer. A founder's operating system, six modules
-            that stack into a compounding growth engine built for launch and
-            scale.
+            Not an agency retainer. A founder's operating system, six modules that stack into a
+            compounding growth engine built for launch and scale.
           </p>
         </div>
 
@@ -96,9 +96,7 @@ export function Services() {
                     {s.desc}
                   </p>
                 </div>
-                <div className="font-display text-5xl italic opacity-90 md:text-6xl">
-                  {s.n}
-                </div>
+                <div className="font-display text-5xl italic opacity-90 md:text-6xl">{s.n}</div>
               </div>
             </motion.article>
           ))}

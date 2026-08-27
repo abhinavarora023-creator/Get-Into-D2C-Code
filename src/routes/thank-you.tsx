@@ -61,12 +61,8 @@ function ThankYou() {
 
         <div className="mt-8 space-y-3 rounded-2xl border border-black/[0.06] bg-[#F7FAFF] p-5 text-left">
           <div className="flex items-center gap-3 text-sm text-[#0a0a0a]/75">
-            <Calendar className="h-4 w-4 text-[#e11d2a]" />
-            See you on <b className="font-semibold text-[#0a0a0a]">26th August</b>
-          </div>
-          <div className="flex items-center gap-3 text-sm text-[#0a0a0a]/75">
             <Mail className="h-4 w-4 text-[#e11d2a]" />
-            Check your inbox for details and joining instructions.
+            Check your inbox for community details and access links.
           </div>
         </div>
 

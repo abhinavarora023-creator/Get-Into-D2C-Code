@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { BLOG_POSTS } from "../lib/blog-posts";
+import { WEBINARS } from "../lib/webinars";
 
 const SITE_URL = "https://getintod2c.in";
 
@@ -8,6 +9,7 @@ export function generateSitemapXml(): string {
   const staticRoutes = [
     { url: "/", priority: "1.0", changefreq: "weekly" },
     { url: "/for-founders", priority: "0.8", changefreq: "monthly" },
+    { url: "/webinars", priority: "0.8", changefreq: "weekly" },
     { url: "/registerations", priority: "0.8", changefreq: "weekly" },
     { url: "/blog", priority: "0.8", changefreq: "weekly" },
   ];
@@ -18,7 +20,13 @@ export function generateSitemapXml(): string {
     changefreq: "monthly",
   }));
 
-  const allRoutes = [...staticRoutes, ...blogRoutes];
+  const webinarRoutes = WEBINARS.map((w) => ({
+    url: `/webinars/${w.slug}`,
+    priority: "0.8",
+    changefreq: "monthly",
+  }));
+
+  const allRoutes = [...staticRoutes, ...blogRoutes, ...webinarRoutes];
 
   const urlsXml = allRoutes
     .map(
@@ -26,7 +34,7 @@ export function generateSitemapXml(): string {
     <loc>${SITE_URL}${r.url}</loc>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
-  </url>`
+  </url>`,
     )
     .join("\n");
 
@@ -37,7 +45,10 @@ ${urlsXml}
 `;
 }
 
-if (import.meta.url === `file://${process.argv[1]}` || process.argv[1]?.endsWith("generate-sitemap.ts")) {
+if (
+  import.meta.url === `file://${process.argv[1]}` ||
+  process.argv[1]?.endsWith("generate-sitemap.ts")
+) {
   const outputPath = path.resolve(process.cwd(), "public/sitemap.xml");
   const xml = generateSitemapXml();
   fs.writeFileSync(outputPath, xml, "utf-8");

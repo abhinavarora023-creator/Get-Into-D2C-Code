@@ -56,7 +56,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Target a specific micro-niche first: instead of \"organic skincare,\" focus on \"dermatologist-backed barrier repair for Indian acne-prone skin.\"",
+          'Target a specific micro-niche first: instead of "organic skincare," focus on "dermatologist-backed barrier repair for Indian acne-prone skin."',
           "Anchor around outcomes: communicate clear, tangible outcomes rather than abstract brand promises.",
           "Craft a unique value proposition: answer three questions above the fold on your homepage. What is this? Who is it for? Why is it better than the alternatives?",
         ],
@@ -183,10 +183,7 @@ export const BLOG_POSTS: BlogPost[] = [
           ],
           ["Primary Channels", "D2C Website, Instagram, Physical Flagship Stores"],
           ["Funding Status", "Bootstrapped / Unfunded"],
-          [
-            "Key Distinction",
-            "Strict Zero Restock drop model plus premium pricing positioning",
-          ],
+          ["Key Distinction", "Strict Zero Restock drop model plus premium pricing positioning"],
         ],
       },
       { type: "h2", text: "1. The Origin Story: Classmates with a Shared Vision" },
@@ -309,11 +306,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "Flagship experiential stores (Delhi, Mumbai, Hyderabad)",
             "High-footfall mall outlets and global expansion (UAE)",
           ],
-          [
-            "Brand Levers",
-            "Art and fabric craftsmanship",
-            "Pop culture and anime licensing",
-          ],
+          ["Brand Levers", "Art and fabric craftsmanship", "Pop culture and anime licensing"],
         ],
       },
       { type: "h2", text: "1. Product and Pricing: The Margin Architecture" },
@@ -389,11 +382,7 @@ export const BLOG_POSTS: BlogPost[] = [
         rows: [
           ["Positioning", "Guesswork", "Data-led white space analysis"],
           ["Financial Model", "Ad-hoc", "Structured unit economics"],
-          [
-            "Go-To-Market",
-            "Shopify plus Meta ads only",
-            "Omnichannel and retention strategy",
-          ],
+          ["Go-To-Market", "Shopify plus Meta ads only", "Omnichannel and retention strategy"],
           ["Outcome", "~90% risk of failure", "Accelerated product-market fit"],
         ],
       },
@@ -432,8 +421,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "d2c-brand-launch-checklist-beginners",
-    title:
-      "D2C Brand Launch Checklist for Beginners: How to Turn a Product Idea into a D2C Brand",
+    title: "D2C Brand Launch Checklist for Beginners: How to Turn a Product Idea into a D2C Brand",
     excerpt:
       "A complete pre-launch to scale checklist for Indian founders on turning a consumer product idea into an enduring, profitable D2C brand.",
     readTime: "9 min read",
@@ -499,10 +487,26 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "table",
         headers: ["Milestone", "Timeline", "Key Deliverables"],
         rows: [
-          ["Validation & Sourcing", "Weeks 1-4", "Sample approval, unit economics model, low MOQ supplier agreement"],
-          ["Compliance & Branding", "Weeks 5-7", "GST, Trademark, FSSAI/CDSCO, visual identity & packaging design"],
-          ["Storefront & Tech", "Weeks 8-10", "Shopify build, payments, logistics, tracking pixels, legal policies"],
-          ["GTM & Ad Launch", "Weeks 11-12", "Creator UGC assets, Meta ad launch, WhatsApp automation, launch push"],
+          [
+            "Validation & Sourcing",
+            "Weeks 1-4",
+            "Sample approval, unit economics model, low MOQ supplier agreement",
+          ],
+          [
+            "Compliance & Branding",
+            "Weeks 5-7",
+            "GST, Trademark, FSSAI/CDSCO, visual identity & packaging design",
+          ],
+          [
+            "Storefront & Tech",
+            "Weeks 8-10",
+            "Shopify build, payments, logistics, tracking pixels, legal policies",
+          ],
+          [
+            "GTM & Ad Launch",
+            "Weeks 11-12",
+            "Creator UGC assets, Meta ad launch, WhatsApp automation, launch push",
+          ],
         ],
       },
     ],
@@ -532,7 +536,11 @@ export const BLOG_POSTS: BlogPost[] = [
           ["Branding & Visual Identity", "₹25,000 – ₹50,000", "₹1,00,000 – ₹2,50,000"],
           ["Shopify Store & Essential Apps", "₹15,000 – ₹30,000", "₹50,000 – ₹1,00,000"],
           ["Creative Production (UGC & Shoots)", "₹25,000 – ₹50,000", "₹1,00,000 – ₹2,00,000"],
-          ["Initial Working Capital & Ad Budget (Month 1)", "₹75,000 – ₹1,50,000", "₹3,00,000 – ₹6,00,000"],
+          [
+            "Initial Working Capital & Ad Budget (Month 1)",
+            "₹75,000 – ₹1,50,000",
+            "₹3,00,000 – ₹6,00,000",
+          ],
           ["Total Estimated Capital", "₹2,90,000 – ₹6,30,000", "₹12,50,000 – ₹25,50,000"],
         ],
       },
@@ -565,8 +573,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "d2c-brand-positioning-pricing-framework",
-    title:
-      "D2C Brand Positioning Framework: How to Price Products for Sustainable Profit Margins",
+    title: "D2C Brand Positioning Framework: How to Price Products for Sustainable Profit Margins",
     excerpt:
       "Stop guessing margins. Learn the strategic positioning framework and pricing architecture behind India's fastest-growing consumer brands.",
     readTime: "8 min read",
@@ -624,8 +631,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "successful-d2c-brand-case-studies-india",
-    title:
-      "Successful D2C Brand Case Studies in India: How Famous Brands Built Their GTM Strategy",
+    title: "Successful D2C Brand Case Studies in India: How Famous Brands Built Their GTM Strategy",
     excerpt:
       "A deep teardown of India's iconic D2C success stories: how brands like Foxtale, Mokobara, The Whole Truth, and BLUORNG scaled from zero to ₹100Cr.",
     readTime: "12 min read",
@@ -679,18 +685,37 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "table",
         headers: ["Brand", "Core Category", "Primary Growth Lever", "Key GTM Insight"],
         rows: [
-          ["Foxtale", "Skincare", "Hero SKU Focus & Consumer Trials", "Master 2-3 hero products before catalog expansion"],
-          ["Mokobara", "Travel & Luggage", "Aesthetic Design & Airport Retail", "Turn a low-frequency utility into an aspirational fashion accessory"],
-          ["The Whole Truth", "Healthy Food / Snacking", "Content-Led Transparency & Quick Commerce", "Education builds customer trust that outlasts ad discounting"],
-          ["BLUORNG", "Luxury Streetwear", "Zero-Restock Scarcity & Flagship Stores", "Scarcity and uncompromising craftsmanship protect 70%+ gross margins"],
+          [
+            "Foxtale",
+            "Skincare",
+            "Hero SKU Focus & Consumer Trials",
+            "Master 2-3 hero products before catalog expansion",
+          ],
+          [
+            "Mokobara",
+            "Travel & Luggage",
+            "Aesthetic Design & Airport Retail",
+            "Turn a low-frequency utility into an aspirational fashion accessory",
+          ],
+          [
+            "The Whole Truth",
+            "Healthy Food / Snacking",
+            "Content-Led Transparency & Quick Commerce",
+            "Education builds customer trust that outlasts ad discounting",
+          ],
+          [
+            "BLUORNG",
+            "Luxury Streetwear",
+            "Zero-Restock Scarcity & Flagship Stores",
+            "Scarcity and uncompromising craftsmanship protect 70%+ gross margins",
+          ],
         ],
       },
     ],
   },
   {
     slug: "why-early-stage-d2c-brands-fail",
-    title:
-      "Why Early Stage D2C Brands Fail in India (And How to Fix It)",
+    title: "Why Early Stage D2C Brands Fail in India (And How to Fix It)",
     excerpt:
       "The 6 fatal mistakes Indian D2C founders make: from vanity ROAS to cash flow traps, and the proven growth strategies to avoid them.",
     readTime: "8 min read",
@@ -732,8 +757,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "how-to-fix-leaking-margins-lower-cac-d2c",
-    title:
-      "How to Fix Leaking Margins in D2C: Lowering CAC and Mastering Unit Economics",
+    title: "How to Fix Leaking Margins in D2C: Lowering CAC and Mastering Unit Economics",
     excerpt:
       "A founder's diagnostic guide to plugging margin leaks, lowering customer acquisition cost (CAC), and optimizing e-commerce conversion rates.",
     readTime: "11 min read",
@@ -781,8 +805,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "how-to-increase-repeat-order-rate-d2c",
-    title:
-      "How to Increase Repeat Order Rate in D2C: Retention Systems & WhatsApp Commerce",
+    title: "How to Increase Repeat Order Rate in D2C: Retention Systems & WhatsApp Commerce",
     excerpt:
       "Why the second purchase defines your business valuation: building automated lifecycle marketing, replenishment triggers, and loyalty loops.",
     readTime: "7 min read",
@@ -887,4 +910,3 @@ export const BLOG_POSTS: BlogPost[] = [
 export function getPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
 }
-

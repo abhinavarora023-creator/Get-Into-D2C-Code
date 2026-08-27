@@ -16,10 +16,7 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/auth")({
   validateSearch: (search) => searchSchema.parse(search),
   head: () => ({
-    meta: [
-      { title: "Admin sign in — GetIntoD2C" },
-      { name: "robots", content: "noindex" },
-    ],
+    meta: [{ title: "Admin sign in — GetIntoD2C" }, { name: "robots", content: "noindex" }],
   }),
   component: AuthPage,
 });
@@ -106,8 +103,7 @@ function AuthPage() {
               </>
             ) : (
               <>
-                Create the first{" "}
-                <span className="text-serif-italic">admin account</span>.
+                Create the first <span className="text-serif-italic">admin account</span>.
               </>
             )}
           </h1>
@@ -147,9 +143,7 @@ function AuthPage() {
             <div className="mt-4 flex items-center justify-between">
               <button
                 type="button"
-                onClick={() =>
-                  setMode((m) => (m === "signin" ? "signup" : "signin"))
-                }
+                onClick={() => setMode((m) => (m === "signin" ? "signup" : "signin"))}
                 className="text-xs uppercase tracking-[0.28em] text-[#0a0a0a]/60 hover:text-[#0a0a0a]"
               >
                 {mode === "signin" ? "Create account" : "Have an account? Sign in"}

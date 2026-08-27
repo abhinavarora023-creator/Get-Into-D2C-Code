@@ -34,7 +34,10 @@ function Counter({ value }: { value: number }) {
 
 export function Stats() {
   return (
-    <section id="proof" className="bg-gradient-dark-accent relative overflow-hidden py-28 text-[#ffffff] md:py-36">
+    <section
+      id="proof"
+      className="bg-gradient-dark-accent relative overflow-hidden py-28 text-[#ffffff] md:py-36"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -46,8 +49,8 @@ export function Stats() {
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-[#ffffff]/80 md:text-lg">
-            Twelve years. Six categories. Hundreds of launches. The numbers we
-            care about most are the ones behind founders sleeping better.
+            Twelve years. Six categories. Hundreds of launches. The numbers we care about most are
+            the ones behind founders sleeping better.
           </p>
         </div>
 

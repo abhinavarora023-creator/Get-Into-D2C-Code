@@ -70,7 +70,10 @@ const VARIANT_CLS: Record<Tile["variant"], string> = {
 
 export function Industries() {
   return (
-    <section id="industries" className="bg-gradient-rose-glow relative overflow-hidden py-28 md:py-36">
+    <section
+      id="industries"
+      className="bg-gradient-rose-glow relative overflow-hidden py-28 md:py-36"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -78,14 +81,14 @@ export function Industries() {
               GetintoD2C Portfolio
             </div>
             <h2 className="font-display text-4xl leading-[1.02] tracking-tight text-[#0a0a0a] md:text-6xl lg:text-7xl">
-              Six categories.<br />
+              Six categories.
+              <br />
               <span className="text-serif-italic">One studio.</span>
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-[#0a0a0a]/70 md:text-lg">
-            Six D2C categories we have calibrated for zero-day success. Playbooks
-            written, unit economics known cold, and creative that founders are
-            proud to put their name on.
+            Six D2C categories we have calibrated for zero-day success. Playbooks written, unit
+            economics known cold, and creative that founders are proud to put their name on.
           </p>
         </div>
 
@@ -111,9 +114,7 @@ export function Industries() {
                     {tile.desc}
                   </p>
                 </div>
-                <div className="font-display text-5xl italic opacity-90 md:text-6xl">
-                  {tile.n}
-                </div>
+                <div className="font-display text-5xl italic opacity-90 md:text-6xl">{tile.n}</div>
               </div>
               {tile.variant === "sand" && (
                 <div className="pointer-events-none absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-[#e11d2a]/30 blur-3xl transition-opacity duration-700 group-hover:opacity-80" />

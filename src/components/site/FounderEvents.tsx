@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { openCommunityApplyDialog } from "./ApplyDialog";
 
 const EVENTS = [
   {
@@ -23,10 +24,7 @@ const EVENTS = [
 
 export function FounderEvents() {
   return (
-    <section
-      id="events"
-      className="bg-gradient-rose-glow relative overflow-hidden py-28 md:py-36"
-    >
+    <section id="events" className="bg-gradient-rose-glow relative overflow-hidden py-28 md:py-36">
       <div className="pointer-events-none absolute -top-32 -right-32 h-[450px] w-[450px] rounded-full bg-[#e11d2a]/10 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-[400px] w-[400px] rounded-full bg-[#0a0a0a]/5 blur-[100px]" />
       <div className="mx-auto max-w-7xl px-6">
@@ -40,8 +38,8 @@ export function FounderEvents() {
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-[#0a0a0a]/70 md:text-lg">
-            Small, deliberate gatherings where operators trade notes with the
-            studio and the people building the next shelf.
+            Small, deliberate gatherings where operators trade notes with the studio and the people
+            building the next shelf.
           </p>
         </div>
 
@@ -79,15 +77,16 @@ export function FounderEvents() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 rounded-[2rem] border border-black/10 bg-[#f4f4f4] p-8 md:flex-row md:items-center md:p-10">
           <p className="max-w-xl text-base leading-relaxed text-[#0a0a0a]/80 md:text-lg">
-            Want first dibs when a city and date go live? Leave your email and
-            we will send an invite before the room fills.
+            Want first dibs when a city and date go live? Leave your email and we will send an
+            invite before the room fills.
           </p>
-          <a
-            href="/for-founders"
+          <button
+            type="button"
+            onClick={() => openCommunityApplyDialog()}
             className="inline-flex items-center gap-2 rounded-full bg-[#e11d2a] px-6 py-3 text-sm font-medium text-[#ffffff] transition-colors hover:bg-[#0a0a0a]"
           >
             Join the Founders' Community
-          </a>
+          </button>
         </div>
       </div>
     </section>

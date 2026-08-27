@@ -8,7 +8,7 @@ const LINKS: [string, string][] = [
   ["Categories", "/#industries"],
   ["Services", "/#services"],
   ["Process", "/#process"],
-  ["Webinars", "/registerations"],
+  ["Webinars", "/webinars"],
   ["For Founders", "/for-founders"],
   ["Journal", "/blog"],
   ["FAQs", "/#faq"],

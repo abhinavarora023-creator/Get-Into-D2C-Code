@@ -147,7 +147,10 @@ export function FinalCTA() {
       body.append("Brand", result.data.brand);
       body.append("Stage", result.data.stage);
       body.append("Challenge", result.data.challenge);
-      body.append("_subject", `New GetIntoD2C brief from ${result.data.fullName} (${result.data.brand})`);
+      body.append(
+        "_subject",
+        `New GetIntoD2C brief from ${result.data.fullName} (${result.data.brand})`,
+      );
       body.append("_replyto", result.data.email);
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
@@ -170,7 +173,10 @@ export function FinalCTA() {
   };
 
   return (
-    <section id="book" className="relative overflow-hidden bg-[#0a0a0a] py-28 text-[#ffffff] md:py-36">
+    <section
+      id="book"
+      className="relative overflow-hidden bg-[#0a0a0a] py-28 text-[#ffffff] md:py-36"
+    >
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#e11d2a]/25 blur-3xl" />
       <div className="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-[#ffffff]/10 blur-3xl" />
 
@@ -193,12 +199,11 @@ export function FinalCTA() {
             transition={{ duration: 0.9, ease: [0.19, 1, 0.22, 1] }}
             className="font-display text-5xl leading-[1] tracking-tight md:text-7xl lg:text-[96px]"
           >
-            Ready to build your{" "}
-            <span className="text-serif-italic">icon?</span>
+            Ready to build your <span className="text-serif-italic">icon?</span>
           </motion.h2>
           <p className="mx-auto mt-8 max-w-xl text-lg text-[#ffffff]/80">
-            Now accepting a small cohort of founders each quarter. Send us the
-            brief, or pick a time on the calendar. We'll bring the audit.
+            Now accepting a small cohort of founders each quarter. Send us the brief, or pick a time
+            on the calendar. We'll bring the audit.
           </p>
         </div>
 
@@ -270,7 +275,12 @@ export function FinalCTA() {
               <>
                 <div className="grid gap-4">
                   <Field label="Full name" name="fullName" placeholder="Jane Founder" />
-                  <Field label="Work email" name="email" type="email" placeholder="jane@brand.com" />
+                  <Field
+                    label="Work email"
+                    name="email"
+                    type="email"
+                    placeholder="jane@brand.com"
+                  />
                   <Field label="Brand name" name="brand" placeholder="Your brand" />
                   <div className="flex flex-col gap-2">
                     <label className="text-[11px] uppercase tracking-[0.28em] text-[#0a0a0a]/60">

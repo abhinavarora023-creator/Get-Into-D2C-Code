@@ -17,7 +17,6 @@ import { Footer } from "@/components/site/Footer";
 import { FloatingCTA } from "@/components/site/FloatingCTA";
 import { WebinarPopup } from "@/components/site/WebinarPopup";
 
-
 import { getHomepageSchemas, createJsonLdScript } from "@/lib/seo-schema";
 
 export const Route = createFileRoute("/")({
@@ -25,8 +24,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "GetIntoD2C — D2C Brand Launchpad & Growth Studio India | GTM & Brand Building",
+        title: "GetIntoD2C — D2C Brand Launchpad & Growth Studio India | GTM & Brand Building",
       },
       {
         name: "description",
@@ -40,8 +38,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content:
-          "GetIntoD2C — D2C Brand Launchpad & Growth Studio India",
+        content: "GetIntoD2C — D2C Brand Launchpad & Growth Studio India",
       },
       {
         property: "og:description",

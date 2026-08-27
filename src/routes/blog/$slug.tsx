@@ -56,10 +56,7 @@ function renderSection(section: BlogSection, i: number) {
       );
     case "h2":
       return (
-        <h2
-          key={i}
-          className="mt-14 font-serif text-3xl leading-tight md:text-4xl"
-        >
+        <h2 key={i} className="mt-14 font-serif text-3xl leading-tight md:text-4xl">
           {section.text}
         </h2>
       );
@@ -114,18 +111,12 @@ function renderSection(section: BlogSection, i: number) {
       );
     case "table":
       return (
-        <div
-          key={i}
-          className="mt-8 overflow-x-auto rounded-2xl border border-black/10"
-        >
+        <div key={i} className="mt-8 overflow-x-auto rounded-2xl border border-black/10">
           <table className="w-full border-collapse text-left">
             <thead className="bg-[#0a0a0a] text-white">
               <tr>
                 {section.headers.map((h, j) => (
-                  <th
-                    key={j}
-                    className="px-5 py-4 font-mono text-xs uppercase tracking-[0.2em]"
-                  >
+                  <th key={j} className="px-5 py-4 font-mono text-xs uppercase tracking-[0.2em]">
                     {h}
                   </th>
                 ))}
@@ -133,15 +124,9 @@ function renderSection(section: BlogSection, i: number) {
             </thead>
             <tbody>
               {section.rows.map((row, j) => (
-                <tr
-                  key={j}
-                  className="border-t border-black/10 odd:bg-white even:bg-black/[0.02]"
-                >
+                <tr key={j} className="border-t border-black/10 odd:bg-white even:bg-black/[0.02]">
                   {row.map((cell, k) => (
-                    <td
-                      key={k}
-                      className="px-5 py-4 align-top text-sm text-black/80 md:text-base"
-                    >
+                    <td key={k} className="px-5 py-4 align-top text-sm text-black/80 md:text-base">
                       {cell}
                     </td>
                   ))}
@@ -178,19 +163,13 @@ function BlogPostPage() {
           <span>{post.date}</span>
         </div>
 
-        <h1 className="mt-6 font-serif text-4xl leading-[1.1] md:text-6xl">
-          {post.title}
-        </h1>
-        <p className="mt-6 text-xl leading-relaxed text-black/70">
-          {post.excerpt}
-        </p>
+        <h1 className="mt-6 font-serif text-4xl leading-[1.1] md:text-6xl">{post.title}</h1>
+        <p className="mt-6 text-xl leading-relaxed text-black/70">{post.excerpt}</p>
 
         <div className="mt-10 h-px w-full bg-black/10" />
 
         <div className="mt-4">
-          {post.sections.map((section: BlogSection, i: number) =>
-            renderSection(section, i),
-          )}
+          {post.sections.map((section: BlogSection, i: number) => renderSection(section, i))}
         </div>
 
         <div className="mt-16 rounded-3xl bg-[#0a0a0a] p-8 text-white md:p-12">
@@ -201,8 +180,8 @@ function BlogPostPage() {
             Ready to build a brand worth remembering?
           </h2>
           <p className="mt-4 text-white/70">
-            GetIntoD2C is the launchpad for founders building the next
-            generation of Indian consumer brands.
+            GetIntoD2C is the launchpad for founders building the next generation of Indian consumer
+            brands.
           </p>
           <a
             href="/#book"
@@ -216,9 +195,7 @@ function BlogPostPage() {
 
       {others.length > 0 && (
         <section className="mx-auto max-w-5xl px-6 pb-28">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-black/50">
-            Keep reading
-          </p>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-black/50">Keep reading</p>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {others.map((p) => (
               <Link

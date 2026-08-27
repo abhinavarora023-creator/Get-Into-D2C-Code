@@ -33,9 +33,7 @@ export function FAQ() {
   return (
     <section id="faq" className="bg-gradient-warm relative py-28 md:py-36">
       <div className="mx-auto max-w-4xl px-6">
-        <div className="mb-6 text-[11px] uppercase tracking-[0.32em] text-[#e11d2a]">
-          Questions
-        </div>
+        <div className="mb-6 text-[11px] uppercase tracking-[0.32em] text-[#e11d2a]">Questions</div>
         <h2 className="mb-14 font-display text-4xl leading-[1.02] tracking-tight text-[#0a0a0a] md:text-6xl">
           Frequently asked, <span className="text-serif-italic">answered.</span>
         </h2>

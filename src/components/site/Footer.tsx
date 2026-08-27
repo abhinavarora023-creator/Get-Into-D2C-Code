@@ -15,12 +15,24 @@ export function Footer() {
             </p>
           </div>
           <nav className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-[#0a0a0a]/70">
-            <a href="#top" className="hover:text-[#0a0a0a]">Home</a>
-            <a href="#industries" className="hover:text-[#0a0a0a]">Studio</a>
-            <a href="#services" className="hover:text-[#0a0a0a]">Services</a>
-            <a href="#process" className="hover:text-[#0a0a0a]">Process</a>
-            <a href="#faq" className="hover:text-[#0a0a0a]">FAQs</a>
-            <a href="#book" className="hover:text-[#0a0a0a]">Contact</a>
+            <a href="#top" className="hover:text-[#0a0a0a]">
+              Home
+            </a>
+            <a href="#industries" className="hover:text-[#0a0a0a]">
+              Studio
+            </a>
+            <a href="#services" className="hover:text-[#0a0a0a]">
+              Services
+            </a>
+            <a href="#process" className="hover:text-[#0a0a0a]">
+              Process
+            </a>
+            <a href="#faq" className="hover:text-[#0a0a0a]">
+              FAQs
+            </a>
+            <a href="#book" className="hover:text-[#0a0a0a]">
+              Contact
+            </a>
           </nav>
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-black/40 pt-8 text-[11px] uppercase tracking-[0.3em] text-[#0a0a0a]/50 md:flex-row md:items-center">

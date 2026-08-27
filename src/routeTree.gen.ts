@@ -18,6 +18,8 @@ import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as WebinarsIndexRouteImport } from './routes/webinars/index'
+import { Route as WebinarsSlugRouteImport } from './routes/webinars/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -63,6 +65,16 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WebinarsIndexRoute = WebinarsIndexRouteImport.update({
+  id: '/webinars/',
+  path: '/webinars/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebinarsSlugRoute = WebinarsSlugRouteImport.update({
+  id: '/webinars/$slug',
+  path: '/webinars/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -72,7 +84,9 @@ export interface FileRoutesByFullPath {
   '/thank-you': typeof ThankYouRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/webinars/$slug': typeof WebinarsSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/webinars/': typeof WebinarsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -82,7 +96,9 @@ export interface FileRoutesByTo {
   '/thank-you': typeof ThankYouRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/webinars/$slug': typeof WebinarsSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/webinars': typeof WebinarsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -94,7 +110,9 @@ export interface FileRoutesById {
   '/thank-you': typeof ThankYouRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/webinars/$slug': typeof WebinarsSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/webinars/': typeof WebinarsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -106,7 +124,9 @@ export interface FileRouteTypes {
     | '/thank-you'
     | '/admin'
     | '/blog/$slug'
+    | '/webinars/$slug'
     | '/blog/'
+    | '/webinars/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -116,7 +136,9 @@ export interface FileRouteTypes {
     | '/thank-you'
     | '/admin'
     | '/blog/$slug'
+    | '/webinars/$slug'
     | '/blog'
+    | '/webinars'
   id:
     | '__root__'
     | '/'
@@ -127,7 +149,9 @@ export interface FileRouteTypes {
     | '/thank-you'
     | '/_authenticated/admin'
     | '/blog/$slug'
+    | '/webinars/$slug'
     | '/blog/'
+    | '/webinars/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -138,7 +162,9 @@ export interface RootRouteChildren {
   RegisterationsRoute: typeof RegisterationsRoute
   ThankYouRoute: typeof ThankYouRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  WebinarsSlugRoute: typeof WebinarsSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  WebinarsIndexRoute: typeof WebinarsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -206,6 +232,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/webinars/': {
+      id: '/webinars/'
+      path: '/webinars'
+      fullPath: '/webinars/'
+      preLoaderRoute: typeof WebinarsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/webinars/$slug': {
+      id: '/webinars/$slug'
+      path: '/webinars/$slug'
+      fullPath: '/webinars/$slug'
+      preLoaderRoute: typeof WebinarsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -228,7 +268,9 @@ const rootRouteChildren: RootRouteChildren = {
   RegisterationsRoute: RegisterationsRoute,
   ThankYouRoute: ThankYouRoute,
   BlogSlugRoute: BlogSlugRoute,
+  WebinarsSlugRoute: WebinarsSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  WebinarsIndexRoute: WebinarsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

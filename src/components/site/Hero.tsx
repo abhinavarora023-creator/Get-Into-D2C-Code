@@ -14,10 +14,7 @@ const CATEGORY_TAGS = [
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative min-h-screen w-full overflow-hidden paper-bg grain"
-    >
+    <section id="top" className="relative min-h-screen w-full overflow-hidden paper-bg grain">
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 pb-20 pt-32 text-center md:pt-40">
         <motion.span
           initial={{ opacity: 1, y: 0 }}
@@ -32,18 +29,17 @@ export function Hero() {
           initial={{ opacity: 1, y: 0 }}
           className="font-display text-5xl leading-[0.98] tracking-[-0.01em] text-[#0a0a0a] sm:text-6xl md:text-7xl lg:text-[104px]"
         >
-          Architecting the next{" "}
-          <span className="text-serif-italic">generation</span>{" "}
-          of consumer icons.
+          Architecting the next <span className="text-serif-italic">generation</span> of consumer
+          icons.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 1, y: 0 }}
           className="mt-10 max-w-2xl text-base leading-relaxed text-[#0a0a0a]/75 md:text-xl"
         >
-          A D2C launchpad for founders of consumer brands. We move founders from
-          scattered ideas to shelf-ready clarity, across FMCG, skincare, snacking,
-          health supplements, beverage and fashion accessories.
+          A D2C launchpad for founders of consumer brands. We move founders from scattered ideas to
+          shelf-ready clarity, across FMCG, skincare, snacking, health supplements, beverage and
+          fashion accessories.
         </motion.p>
 
         <motion.div

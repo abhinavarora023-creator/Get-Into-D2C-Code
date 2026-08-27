@@ -1,6 +1,7 @@
 # Add Meta Pixel + Webinar Event Tracking
 
 ## Goal
+
 Install the Meta Pixel (ID: `1631441611994369`) across the GetIntoD2C site, track page views on every route change, and fire conversion events on the `/registerations` webinar flow.
 
 ## What will change
@@ -23,6 +24,7 @@ Install the Meta Pixel (ID: `1631441611994369`) across the GetIntoD2C site, trac
    - The Pixel ID is public by design and can live in the browser bundle.
 
 ## Verification
+
 - Build the project successfully.
 - Use the Meta Pixel Helper browser extension to confirm the pixel loads and fires `PageView` on navigation.
 - Confirm `InitiateCheckout` and `Purchase` events fire on the registration and thank-you pages.

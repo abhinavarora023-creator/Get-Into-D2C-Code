@@ -52,8 +52,7 @@ export function getHomepageSchemas() {
     "@id": `${SITE_URL}/#website`,
     name: "GetIntoD2C",
     url: SITE_URL,
-    description:
-      "D2C Brand Launchpad & Growth Studio India | GTM Strategy & Brand Building",
+    description: "D2C Brand Launchpad & Growth Studio India | GTM Strategy & Brand Building",
     publisher: {
       "@id": `${SITE_URL}/#organization`,
     },
@@ -177,12 +176,7 @@ export function getHomepageSchemas() {
     ],
   };
 
-  return [
-    organizationSchema,
-    webSiteSchema,
-    ...serviceSchemas,
-    faqSchema,
-  ];
+  return [organizationSchema, webSiteSchema, ...serviceSchemas, faqSchema];
 }
 
 /**
@@ -258,10 +252,12 @@ export function getForFoundersSchemas() {
   return [breadcrumbSchema, faqSchema];
 }
 
+import { WEBINARS, type WebinarPost } from "./webinars";
+
 /**
- * 3. /registerations Page Schemas: BreadcrumbList + Event/EducationEvent
+ * 3. Webinars & Masterclasses Schemas
  */
-export function getRegistrationsSchemas() {
+export function getWebinarsIndexSchemas() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -275,55 +271,80 @@ export function getRegistrationsSchemas() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Register",
-        item: `${SITE_URL}/registerations`,
+        name: "Webinars & Masterclasses",
+        item: `${SITE_URL}/webinars`,
       },
     ],
   };
 
-  const eventSchema = {
+  return [breadcrumbSchema];
+}
+
+export function getWebinarPostSchemas(webinar: WebinarPost) {
+  const breadcrumbSchema = {
     "@context": "https://schema.org",
-    "@type": "EducationEvent",
-    name: "The Proven Playbook to Build a D2C Brand in India",
-    description:
-      "Join us for an exclusive live workshop with successful D2C founders and Angel Investors. Learn how to build, scale and grow a profitable D2C business in India.",
-    startDate: "2026-08-26T16:00:00+05:30",
-    eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
-    eventStatus: "https://schema.org/EventScheduled",
-    location: {
-      "@type": "VirtualLocation",
-      url: `${SITE_URL}/registerations`,
-    },
-    image: `${SITE_URL}/gaurav-virmani.jpg`,
-    organizer: {
-      "@type": "Organization",
-      name: "GetIntoD2C",
-      url: SITE_URL,
-    },
-    performer: [
+    "@type": "BreadcrumbList",
+    itemListElement: [
       {
-        "@type": "Person",
-        name: "Gaurav Virmani",
-        jobTitle: "Founder @ Go Whipped, 3X D2C Founder",
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
       },
       {
-        "@type": "Person",
-        name: "Kandarp Malhotra",
-        jobTitle: "Growth Marketer @ XTCY",
+        "@type": "ListItem",
+        position: 2,
+        name: "Webinars & Masterclasses",
+        item: `${SITE_URL}/webinars`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: webinar.title,
+        item: `${SITE_URL}/webinars/${webinar.slug}`,
       },
     ],
-    offers: {
-      "@type": "Offer",
-      price: "59",
-      priceCurrency: "INR",
-      availability: "https://schema.org/InStock",
-      url: `${SITE_URL}/registerations`,
-      validFrom: "2026-08-01",
-    },
-    maximumAttendeeCapacity: 200,
   };
 
-  return [breadcrumbSchema, eventSchema];
+  const schemas: any[] = [breadcrumbSchema];
+
+  if (webinar.youtubeId) {
+    const videoSchema = {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: webinar.title,
+      description: webinar.excerpt,
+      thumbnailUrl: [
+        `https://i.ytimg.com/vi/${webinar.youtubeId}/maxresdefault.jpg`,
+        `https://i.ytimg.com/vi/${webinar.youtubeId}/hqdefault.jpg`,
+        `${SITE_URL}${webinar.coverImage}`,
+      ],
+      uploadDate: "2026-08-27T00:00:00+05:30",
+      embedUrl: `https://www.youtube.com/embed/${webinar.youtubeId}`,
+      contentUrl: webinar.youtubeUrl || `https://www.youtube.com/watch?v=${webinar.youtubeId}`,
+      author: {
+        "@type": "Organization",
+        name: "GetIntoD2C",
+        url: SITE_URL,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "GetIntoD2C",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: LOGO_URL,
+        },
+      },
+    };
+    schemas.push(videoSchema);
+  }
+
+  return schemas;
+}
+
+export function getRegistrationsSchemas() {
+  return getWebinarsIndexSchemas();
 }
 
 /**
@@ -353,8 +374,7 @@ export function getBlogIndexSchemas() {
     "@context": "https://schema.org",
     "@type": "Blog",
     name: "Journal, GetIntoD2C",
-    description:
-      "Field notes, case studies and playbooks on building D2C brands in India.",
+    description: "Field notes, case studies and playbooks on building D2C brands in India.",
     url: `${SITE_URL}/blog`,
     publisher: {
       "@type": "Organization",
