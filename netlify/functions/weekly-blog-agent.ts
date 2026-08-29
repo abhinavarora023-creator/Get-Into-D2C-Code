@@ -1,5 +1,5 @@
 import type { Config } from "@netlify/functions";
-import { runWeeklyBlogAgent } from "../../src/lib/blog-agent-core";
+import { runWeeklyBlogAgent } from "../../src/lib/blog-agent-core.ts";
 
 export default async (req: Request) => {
   console.log("⚡ [Netlify Scheduled Function] weekly-blog-agent triggered");

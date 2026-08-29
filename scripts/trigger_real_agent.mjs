@@ -10,17 +10,15 @@ dotenv.config({ path: resolve(__dirname, '../.env.local') });
 dotenv.config({ path: resolve(__dirname, '../.env') });
 
 async function run() {
-  console.log('--- 🤖 Triggering weekly-blog-agent locally ---');
-  
-  // Dynamic import of TS module using tsx or compiled module
-  try {
-    const { runWeeklyBlogAgent } = await import('../src/lib/blog-agent-core.ts');
-    const result = await runWeeklyBlogAgent();
-    console.log('\n--- 📊 Agent Run Result ---');
-    console.log(JSON.stringify(result, null, 2));
-  } catch (err) {
-    console.error('Error running blog agent locally:', err);
-  }
+  console.log('--- 🤖 Triggering weekly-blog-agent ---');
+  const funcModule = await import('../netlify/functions/weekly-blog-agent.ts');
+  const handler = funcModule.default;
+  const fakeReq = new Request('https://localhost/weekly-blog-agent', { method: 'POST' });
+  const response = await handler(fakeReq);
+  const data = await response.json();
+  console.log('\n--- 📊 Execution Result ---');
+  console.log(JSON.stringify(data, null, 2));
 }
 
 run().catch(console.error);
+

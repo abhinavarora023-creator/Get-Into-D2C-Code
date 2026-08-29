@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "blog-agent:test": "node scripts/trigger_real_agent.mjs"
+    "blog-agent:test": "node --experimental-strip-types scripts/trigger_real_agent.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
