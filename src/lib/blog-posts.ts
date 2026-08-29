@@ -19,6 +19,68 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "how-quick-commerce-platforms-zepto-blinkit-instamart-are-changing-indian-d2c-distribution-in-2026",
+    title: "How Quick-Commerce Platforms (Zepto, Blinkit, Instamart) Are Changing Indian D2C Distribution in 2026",
+    excerpt: "Indian D2C brands are leveraging quick-commerce as a primary customer discovery and instant replenishment channel.",
+    readTime: "6 min read",
+    category: "Strategy",
+    date: "2026",
+    sections: [
+      {
+        type: "p",
+        text: "Indian D2C brands are leveraging quick-commerce as a primary customer discovery and instant replenishment channel.",
+      },
+      {
+        type: "h2",
+        text: "1. Quick-Commerce as a Primary Discovery Engine",
+      },
+      {
+        type: "p",
+        text: "In 2026, Indian D2C brands cannot rely solely on Meta and Google performance ads. Platforms like Zepto, Blinkit, and Swiggy Instamart have transformed from emergency grocery apps into high-converting product discovery channels.",
+      },
+      {
+        type: "h3",
+        text: "Key Distribution Strategies",
+      },
+      {
+        type: "ul",
+        items: [
+          "Dark Store Staging: Keep high-velocity SKUs in regional dark stores.",
+          "Impulse Pack Sizes: Launch trial packs specifically designed for instant checkout.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "2. Unit Economics and RTO Management",
+      },
+      {
+        type: "p",
+        text: "Return to Origin (RTO) remains the single biggest profit drain for Indian D2C merchants.",
+      },
+      {
+        type: "table",
+        headers: ["Metric", "Industry Standard", "Optimized Target"],
+        rows: [
+          ["Gross Margin", "55%", "75%+"],
+          ["COD RTO Rate", "25%", "< 12%"],
+          ["Repeat Customer Rate", "15%", "35%"],
+        ],
+      },
+      {
+        type: "h2",
+        text: "Actionable Checklist for Founders",
+      },
+      {
+        type: "ol",
+        items: [
+          "Audit gross margins before spending on performance marketing.",
+          "Implement pre-dispatch order verification via WhatsApp API.",
+          "Expand into dark store quick-commerce for top 20% bestseller items.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "how-to-start-a-d2c-brand-in-india-2026",
     title: "How to Start a D2C Brand in India in 2026: A Step-by-Step Guide",
     excerpt:
