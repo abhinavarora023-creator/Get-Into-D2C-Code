@@ -440,3 +440,72 @@ export function getFAQPageSchema(faqs: { question: string; answer: string }[]) {
   };
 }
 
+/**
+ * 7. /webinars Index Page Schemas
+ */
+export function getWebinarsIndexSchemas() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Masterclasses & Webinars",
+        item: `${SITE_URL}/webinars`,
+      },
+    ],
+  };
+
+  return [breadcrumbSchema];
+}
+
+/**
+ * 8. /webinars/$slug Post Page Schemas
+ */
+export function getWebinarPostSchemas(webinar: any) {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Webinars",
+        item: `${SITE_URL}/webinars`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: webinar.title,
+        item: `${SITE_URL}/webinars/${webinar.slug}`,
+      },
+    ],
+  };
+
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: webinar.title,
+    description: webinar.excerpt,
+    thumbnailUrl: webinar.coverImage.startsWith("http") ? webinar.coverImage : `${SITE_URL}${webinar.coverImage}`,
+    uploadDate: "2026-08-01T00:00:00+05:30",
+    embedUrl: webinar.youtubeId ? `https://www.youtube.com/embed/${webinar.youtubeId}` : undefined,
+  };
+
+  return [breadcrumbSchema, videoSchema];
+}
+
+

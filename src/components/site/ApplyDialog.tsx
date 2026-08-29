@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUpRight, CheckCircle2, Loader2 } from "lucide-react";
 import {
   Dialog,
@@ -13,6 +13,12 @@ import { Label } from "@/components/ui/label";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdaqelrv";
 
+export function openCommunityApplyDialog() {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("open-apply-dialog"));
+  }
+}
+
 type Props = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -21,6 +27,12 @@ type Props = {
 export function ApplyDialog({ open, onOpenChange }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleOpen = () => onOpenChange(true);
+    window.addEventListener("open-apply-dialog", handleOpen);
+    return () => window.removeEventListener("open-apply-dialog", handleOpen);
+  }, [onOpenChange]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
