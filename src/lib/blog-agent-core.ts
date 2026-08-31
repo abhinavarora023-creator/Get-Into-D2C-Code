@@ -97,7 +97,7 @@ export async function runWeeklyBlogAgent(): Promise<BlogAgentResult> {
       console.log('🔍 Researching trending Indian D2C industry topics via Gemini 2.0 Flash + Search Grounding...');
       const genAI = new GoogleGenerativeAI(geminiKey);
       const model = genAI.getGenerativeModel({
-        model: 'gemini-2.0-flash',
+        model: 'gemini-3.6-flash',
         tools: [{ googleSearch: {} }] as any,
       });
 
@@ -217,7 +217,7 @@ Output a JSON array ONLY with 1 distinct timely object matching this exact forma
       try {
         console.log(`📝 Writing 1000-1200 word authoritative SEO post for: "${trend.topic}"...`);
         const genAI = new GoogleGenerativeAI(geminiKey);
-        const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+        const model = genAI.getGenerativeModel({ model: 'gemini-3.6-flash' });
 
         const articlePrompt = `
 Write an in-depth, 1000-1200 word authoritative SEO blog post tailored specifically for Indian D2C brand founders on: "${trend.topic}".
