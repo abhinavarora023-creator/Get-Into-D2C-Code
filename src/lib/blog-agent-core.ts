@@ -58,7 +58,9 @@ export async function runWeeklyBlogAgent(): Promise<BlogAgentResult> {
     try {
       supabase = createClient(supabaseUrl, serviceRoleKey, {
         auth: { persistSession: false, autoRefreshToken: false },
-        realtime: { createWebSocket: () => null as any },
+        realtime: {
+          transport: typeof WebSocket !== 'undefined' ? WebSocket : (null as any),
+        },
       });
     } catch (e: any) {
       console.warn('⚠️ Could not initialize Supabase client:', e?.message || e);
