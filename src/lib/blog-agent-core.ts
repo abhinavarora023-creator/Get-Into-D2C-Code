@@ -133,14 +133,78 @@ Output a JSON array ONLY with 1 distinct timely object matching this exact forma
   }
 
   if (!trendTopics || trendTopics.length === 0) {
-    trendTopics = [
+    const fallbackTopicPool: (TopicData & { faqs: FAQ[]; body: string })[] = [
       {
         topic: 'How Quick-Commerce Platforms (Zepto, Blinkit, Instamart) Are Changing Indian D2C Distribution in 2026',
         category: 'Strategy',
         keywords: ['Quick-Commerce', 'D2C India', 'Distribution', 'Zepto', 'Blinkit'],
         summary: 'Indian D2C brands are leveraging quick-commerce as a primary customer discovery and instant replenishment channel.',
+        faqs: [
+          {
+            question: 'Why is quick-commerce critical for Indian D2C brands in 2026?',
+            answer: 'Quick-commerce provides instant 10-minute delivery gratification, drastically boosting replenishment frequency and brand trial.',
+          },
+          {
+            question: 'How should D2C brands mitigate Cash on Delivery (COD) Return-to-Origin (RTO)?',
+            answer: 'Implement automated WhatsApp order verification prior to dispatch and offer small prepaid discounts.',
+          },
+          {
+            question: 'What unit economics margin threshold is required for scaling on quick commerce?',
+            answer: 'Brands must maintain gross margins of 65%–75% to absorb CAC, dark store margins, and platform delivery commissions.',
+          },
+        ],
+        body: `## Executive Overview\n\nIndian D2C brands are leveraging quick-commerce as a primary customer discovery and instant replenishment channel.\n\n## 1. Quick-Commerce as a Primary Discovery Engine\n\nIn 2026, Indian D2C brands cannot rely solely on Meta and Google performance ads. Platforms like Zepto, Blinkit, and Swiggy Instamart have transformed from emergency grocery apps into high-converting product discovery channels.\n\n### Key Distribution Strategies\n- **Dark Store Staging**: Keep high-velocity SKUs in regional dark stores.\n- **Impulse Pack Sizes**: Launch trial packs specifically designed for instant checkout.\n\n## 2. Unit Economics and RTO Management\n\nReturn to Origin (RTO) remains the single biggest profit drain for Indian D2C merchants.\n\n| Metric | Industry Standard | Optimized Target |\n|---|---|---|\n| Gross Margin | 55% | 75%+ |\n| COD RTO Rate | 25% | < 12% |\n| Repeat Customer Rate | 15% | 35% |\n\n## Actionable Checklist for Founders\n\n1. Audit gross margins before spending on performance marketing.\n2. Implement pre-dispatch order verification via WhatsApp API.\n3. Expand into dark store quick-commerce for top 20% bestseller items.`,
+      },
+      {
+        topic: 'Mastering WhatsApp Retention and COD RTO Reduction for Indian D2C Brands',
+        category: 'Operations',
+        keywords: ['WhatsApp Automation', 'COD Verification', 'RTO Reduction', 'Retention', 'Logistics'],
+        summary: 'How leading Indian consumer brands use automated WhatsApp conversational flows to lower Return-to-Origin below 10% and drive repeat purchases.',
+        faqs: [
+          {
+            question: 'How much does WhatsApp order verification reduce RTO rates?',
+            answer: 'Pre-dispatch address verification and phone confirmation via WhatsApp typically reduces COD RTO rates by 35% to 50%.',
+          },
+          {
+            question: 'What is the best incentive to convert COD to prepaid on WhatsApp?',
+            answer: 'Offering instant cashback, extra reward points, or a flat 5% discount at order confirmation reliably converts 20-30% of COD buyers to UPI.',
+          },
+          {
+            question: 'When should retention re-order messages be triggered?',
+            answer: 'Trigger automated replenishment alerts based on consumption cycle data (e.g. Day 25 for a 30-day consumable skincare or nutrition product).',
+          },
+        ],
+        body: `## Executive Summary\n\nCash on Delivery (COD) remains both a revenue unlock and an operational nightmare for Indian D2C businesses. Automated WhatsApp API workflows have emerged as the single most effective tool for verifying orders, slashing RTO, and compounding repeat customer lifetime value.\n\n## 1. The Pre-Dispatch Verification Funnel\n\nUnconfirmed COD orders represent dead freight and tied-up inventory. Implementing an automated WhatsApp bot at the moment of order placement ensures:\n- Pin-code and address validation\n- Intent confirmation before label printing\n- Instant UPI payment switch incentives\n\n## 2. Retention via Conversational Commerce\n\nEmail marketing in India suffers from low open rates (~12%), while WhatsApp delivers 80%+ open rates within 15 minutes of broadcast.\n\n| Metric | Email Marketing | WhatsApp Flow |\n|---|---|---|\n| Open Rate | 12% - 15% | 85% - 92% |\n| Click-Through Rate | 1.8% | 14.5% |\n| Conversion Rate | 0.6% | 4.2% |\n\n## Actionable Framework for Founders\n\n1. Integrate WhatsApp Business API with Shopify and Shiprocket/Delhivery.\n2. Enable automatic cancellation for unverified high-risk COD orders.\n3. Build consumable replenishment flows tailored to customer re-order intervals.`,
+      },
+      {
+        topic: 'The 2026 Meta Ads & Performance Marketing Playbook: Controlling CAC at Scale',
+        category: 'Growth',
+        keywords: ['Meta Ads', 'CAC Control', 'Creative Strategy', 'First-Party Data', 'Performance Marketing'],
+        summary: 'A tactical blueprint for scaling Meta and Google ad spend profitably while keeping Customer Acquisition Cost within healthy unit economic limits.',
+        faqs: [
+          {
+            question: 'What is a sustainable Blended CAC ratio for Indian D2C brands?',
+            answer: 'A healthy brand should target a Customer Acquisition Cost of under 30% of First-Order AOV, and under 15% of 6-month Customer Lifetime Value.',
+          },
+          {
+            question: 'How many ad creatives should a D2C brand test weekly?',
+            answer: 'Scaling brands spending 5L+ monthly should test 15-20 new creative iterations (hooks, angles, UGC, visual formats) weekly.',
+          },
+          {
+            question: 'Should brands use Advantage+ Shopping Campaigns (ASC)?',
+            answer: 'Yes, but pair ASC with separate broad-targeting concept testing ad sets to discover breakout winning hooks without burning budget.',
+          },
+        ],
+        body: `## Executive Overview\n\nRising ad platform CPMs and signal degradation mean generic product ads no longer scale profitably. Successful Indian D2C brands in 2026 treat creative production as their primary targeting lever.\n\n## 1. The Creative Diversity Matrix\n\nTo prevent ad fatigue and expand total addressable audience:\n- **Problem-Agitation Hooks**: Highlight painful daily micro-frustrations.\n- **Founder-Led Storytelling**: Authentic breakdown of product formulation and mission.\n- **Scientific / Ingredient Teardowns**: Lab tests, certifications, and before-after evidence.\n\n## 2. Blended ROAS vs In-Platform ROAS\n\n| Stage | In-Platform ROAS Target | Marketing Efficiency Ratio (MER) |\n|---|---|---|\n| Early Launch (< 10L/mo) | 2.5x - 3.2x | 3.5x+ |\n| Growth Scaling (10L - 50L/mo) | 1.8x - 2.4x | 2.8x - 3.2x |\n| Omnichannel Scale (50L+/mo) | 1.5x - 2.0x | 2.2x - 2.6x |\n\n## Actionable Steps for Growth Teams\n\n1. Move from static images to dynamic 15-second mobile-first UGC video formats.\n2. Optimize landing pages for sub-2-second mobile load time.\n3. Track weekly MER (Total Revenue / Total Marketing Spend) as the North Star.`,
       },
     ];
+
+    // Pick the first topic that hasn't been covered in past posts
+    const availableTopic = fallbackTopicPool.find(
+      (item) => !coveredTopicsText.toLowerCase().includes(item.topic.toLowerCase().slice(0, 30))
+    ) || fallbackTopicPool[0];
+
+    trendTopics = [availableTopic];
   }
 
   // STEP 3: Generate Full Authoritative Article
@@ -196,6 +260,10 @@ Return ONLY valid JSON matching this exact structure:
       }
     } else {
       // Fallback post when API key is missing
+      const matchedFallback = (trend as any).body
+        ? (trend as any)
+        : null;
+
       blog = {
         title: trend.topic,
         slug: trend.topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
@@ -203,21 +271,13 @@ Return ONLY valid JSON matching this exact structure:
         meta_title: `${trend.topic} | GetIntoD2C`,
         meta_description: trend.summary.slice(0, 155),
         read_time_minutes: 6,
-        faqs: [
+        faqs: matchedFallback?.faqs || [
           {
-            question: 'Why is quick-commerce critical for Indian D2C brands in 2026?',
-            answer: 'Quick-commerce provides instant 10-minute delivery gratification, drastically boosting replenishment frequency and brand trial.',
-          },
-          {
-            question: 'How should D2C brands mitigate Cash on Delivery (COD) Return-to-Origin (RTO)?',
-            answer: 'Implement automated WhatsApp order verification prior to dispatch and offer small prepaid discounts.',
-          },
-          {
-            question: 'What unit economics margin threshold is required for scaling?',
-            answer: 'Brands must maintain gross margins of 65%–75% to absorb CAC, shipping fees, and marketplace commissions.',
+            question: `Why is this topic critical for Indian D2C brands in 2026?`,
+            answer: 'Disciplined execution, unit-economic rigor, and customer retention systems are essential to scaling profitably.',
           },
         ],
-        body: `## Executive Overview\n\n${trend.summary}\n\n## 1. Quick-Commerce as a Primary Discovery Engine\n\nIn 2026, Indian D2C brands cannot rely solely on Meta and Google performance ads. Platforms like Zepto, Blinkit, and Swiggy Instamart have transformed from emergency grocery apps into high-converting product discovery channels.\n\n### Key Distribution Strategies\n- **Dark Store Staging**: Keep high-velocity SKUs in regional dark stores.\n- **Impulse Pack Sizes**: Launch trial packs specifically designed for instant checkout.\n\n## 2. Unit Economics and RTO Management\n\nReturn to Origin (RTO) remains the single biggest profit drain for Indian D2C merchants.\n\n| Metric | Industry Standard | Optimized Target |\n|---|---|---|\n| Gross Margin | 55% | 75%+ |\n| COD RTO Rate | 25% | < 12% |\n| Repeat Customer Rate | 15% | 35% |\n\n## Actionable Checklist for Founders\n\n1. Audit gross margins before spending on performance marketing.\n2. Implement pre-dispatch order verification via WhatsApp API.\n3. Expand into dark store quick-commerce for top 20% bestseller items.`,
+        body: matchedFallback?.body || `## Overview\n\n${trend.summary}\n\n## Strategic Takeaways\n\n1. **Execution Rigor**: Build compounding retention flywheels.\n2. **Margin Protection**: Maintain 70%+ gross margins.`,
       };
     }
 

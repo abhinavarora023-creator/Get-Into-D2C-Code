@@ -21,7 +21,7 @@ export default async (req: Request) => {
   }
 };
 
-// Scheduled trigger: runs every Monday at 06:00 UTC
+// Scheduled trigger: runs twice a week (every Monday and Thursday at 06:00 UTC)
 export const config: Config = {
-  schedule: "0 6 * * 1",
+  schedule: "0 6 * * 1,4",
 };
