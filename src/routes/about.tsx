@@ -346,19 +346,12 @@ function AboutPage() {
                     <strong className="text-black">Focus:</strong> Formulations, Supplier Sourcing, MOQ Negotiation
                   </div>
                   <div>
-                    <strong className="text-black">Field Work:</strong> Founder Masterclass & GoWhipped Case Study
+                    <strong className="text-black">Field Work:</strong> Founder Masterclass
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between">
-                <Link
-                  to="/case-studies/$slug"
-                  params={{ slug: "gowhipped" }}
-                  className="inline-flex items-center gap-1 text-xs font-medium text-[#e11d2a] hover:underline"
-                >
-                  View Case Study →
-                </Link>
+              <div className="mt-6 pt-4 border-t border-black/10">
                 <Link
                   to="/webinars/$slug"
                   params={{ slug: "proven-playbook-to-build-a-d2c-brand" }}

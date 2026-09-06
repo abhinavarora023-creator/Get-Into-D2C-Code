@@ -40,56 +40,6 @@ export interface CaseStudyData {
 
 export const CASE_STUDIES: CaseStudyData[] = [
   {
-    slug: "gowhipped",
-    brand: "GoWhipped",
-    title: "GoWhipped — Zero-to-One Formulation, Margin Safety & Sourcing Discipline",
-    subtitle:
-      "How mentor Gaurav Virmani and the GetIntoD2C ecosystem navigated Indian contract manufacturing, minimum order quantities, and margin architecture before deploying performance capital.",
-    category: "Skincare & Personal Care",
-    stage: "0-to-1 Product Validation & Formulations",
-    isTeardown: false,
-    relationshipType: "Studio Partner & Mentor",
-    founderOrLeader: "Gaurav Virmani",
-    founderRole: "Founder @ Go Whipped · 3X D2C Founder & Studio Mentor",
-    challenge:
-      "Launching an indie skincare brand in India requires navigating opaque third-party manufacturers, prohibitive MOQs (minimum order quantities), and container leakage during transit—all while avoiding the common trap of burning paid ad budgets before product-market validation.",
-    diagnosis:
-      "Early D2C beauty brands often overextend their catalogs with 8-12 SKUs, severely diluting working capital and leading to dead inventory. Without 65%+ gross margin buffers, even modest COD return-to-origin (RTO) rates quickly make operations unsustainable.",
-    strategy: [
-      "Concentrate on 1-2 hero SKUs with proven topical efficacy rather than launching a wide catalog.",
-      "Anchor unit economics around a 65% to 75% gross margin baseline to absorb Indian logistics and transit risks.",
-      "Conduct rigorous transit drop-tests and pump-dispenser leakage tests before committing to commercial batch runs.",
-      "Validate initial customer appetite through intimate community trials before initiating Meta and Google ad spend.",
-    ],
-    execution: [
-      "Audited third-party formulation labs across North and West India, negotiating staged batch commitments.",
-      "Implemented a comprehensive batch testing checklist covering viscosity, container compatibility, and transit stress.",
-      "Structured unit economics models incorporating realistic payment gateway fees, COD return charges, and packaging buffers.",
-      "Distilled operational lessons into GetIntoD2C's live founder masterclass series to guide first-time beauty entrepreneurs.",
-    ],
-    servicesProvided: [
-      "Brand Positioning & Whitespace Analysis",
-      "Unit Economics & Margin Architecture",
-      "Supplier & Contract Manufacturing Advisory",
-      "Go-To-Market (GTM) Strategy",
-    ],
-    outcomes: [
-      "Established stable, commercially validated skincare formulation lines ready for compliant distribution.",
-      "Avoided inventory dead-stock by capping initial production runs to verified hero SKUs.",
-      "Documented real-world formulation and supplier negotiation playbooks shared openly across the GetIntoD2C founder community.",
-    ],
-    lessons: [
-      "Never deploy paid performance marketing before formula stability and customer repeat feedback are confirmed.",
-      "Packaging resilience in Indian courier transit is just as critical to contribution margin as customer acquisition cost.",
-      "Negotiate progressive MOQ scaling terms with manufacturers tied to milestone delivery rather than upfront lump sums.",
-    ],
-    relatedServiceSlugs: ["d2c-positioning", "d2c-brand-audit", "d2c-growth"],
-    relatedCategorySlugs: ["skincare"],
-    metaTitle: "GoWhipped Skincare Case Study — GetIntoD2C Growth Studio",
-    metaDescription:
-      "How GoWhipped and mentor Gaurav Virmani engineered zero-to-one skincare formulation, supplier negotiation, and margin architecture.",
-  },
-  {
     slug: "bakedbuzz",
     brand: "BakedBuzz",
     title: "BakedBuzz — Positioning & Launch Architecture for Modern Healthy Snacking",

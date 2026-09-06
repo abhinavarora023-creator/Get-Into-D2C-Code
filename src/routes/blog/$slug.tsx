@@ -175,12 +175,12 @@ function getRelatedResources(post: UnifiedBlogPost) {
 
   let serviceSlugs = ["d2c-brand-audit", "d2c-growth"];
   let categorySlugs = ["fmcg", "skincare"];
-  let caseStudySlugs = ["gowhipped", "bakedbuzz"];
+  let caseStudySlugs = ["bakedbuzz", "foxtale"];
 
   if (s.includes("quick-commerce") || s.includes("distribution") || s.includes("launch")) {
     serviceSlugs = ["d2c-gtm-strategy", "d2c-growth"];
     categorySlugs = ["fmcg", "healthy-snacking"];
-    caseStudySlugs = ["gowhipped", "bakedbuzz"];
+    caseStudySlugs = ["bakedbuzz", "bennys-bowl"];
   } else if (s.includes("bluorng") || s.includes("streetwear") || s.includes("bonkers")) {
     serviceSlugs = ["d2c-positioning", "d2c-retention"];
     categorySlugs = ["fashion-accessories", "skincare"];
@@ -188,7 +188,7 @@ function getRelatedResources(post: UnifiedBlogPost) {
   } else if (s.includes("margins") || s.includes("cac") || s.includes("unit economics")) {
     serviceSlugs = ["d2c-brand-audit", "d2c-cro"];
     categorySlugs = ["health-supplements", "skincare"];
-    caseStudySlugs = ["gowhipped", "plan-your-legacy"];
+    caseStudySlugs = ["plan-your-legacy", "the-whole-truth"];
   } else if (s.includes("repeat") || s.includes("retention") || s.includes("order rate")) {
     serviceSlugs = ["d2c-retention", "d2c-cro"];
     categorySlugs = ["skincare", "fmcg"];

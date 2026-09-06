@@ -254,13 +254,6 @@ function ResourcesHubPage() {
                       Watch Full Masterclass <ArrowUpRight className="h-4 w-4" />
                     </MagneticButton>
                   </Link>
-                  <Link
-                    to="/case-studies/$slug"
-                    params={{ slug: "gowhipped" }}
-                    className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white"
-                  >
-                    View Related Case Study →
-                  </Link>
                 </div>
               </div>
 

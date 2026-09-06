@@ -255,7 +255,7 @@ export const RESOURCES: ResourceData[] = [
     ],
     relatedServiceSlugs: ["d2c-positioning", "d2c-brand-audit", "d2c-gtm-strategy"],
     relatedCategorySlugs: ["fmcg", "skincare", "healthy-snacking"],
-    relatedCaseStudySlugs: ["gowhipped", "bakedbuzz"],
+    relatedCaseStudySlugs: ["bakedbuzz", "foxtale"],
     relatedResourceSlugs: [
       "d2c-brand-cost-india",
       "d2c-product-validation",
@@ -373,7 +373,7 @@ export const RESOURCES: ResourceData[] = [
     ],
     relatedServiceSlugs: ["d2c-brand-audit", "d2c-positioning", "d2c-growth"],
     relatedCategorySlugs: ["fmcg", "skincare", "healthy-snacking"],
-    relatedCaseStudySlugs: ["gowhipped", "bakedbuzz"],
+    relatedCaseStudySlugs: ["bakedbuzz", "plan-your-legacy"],
     relatedResourceSlugs: [
       "how-to-start-a-d2c-brand-in-india",
       "d2c-manufacturing-india",
@@ -464,7 +464,7 @@ export const RESOURCES: ResourceData[] = [
     ],
     relatedServiceSlugs: ["d2c-brand-audit", "d2c-positioning"],
     relatedCategorySlugs: ["skincare", "healthy-snacking", "fmcg"],
-    relatedCaseStudySlugs: ["gowhipped", "foxtale"],
+    relatedCaseStudySlugs: ["foxtale", "bakedbuzz"],
     relatedResourceSlugs: [
       "how-to-start-a-d2c-brand-in-india",
       "d2c-manufacturing-india",
@@ -570,7 +570,7 @@ export const RESOURCES: ResourceData[] = [
     ],
     relatedServiceSlugs: ["d2c-positioning", "d2c-brand-audit"],
     relatedCategorySlugs: ["skincare", "fmcg", "healthy-snacking"],
-    relatedCaseStudySlugs: ["gowhipped", "bakedbuzz"],
+    relatedCaseStudySlugs: ["the-whole-truth", "bakedbuzz"],
     relatedResourceSlugs: [
       "how-to-start-a-d2c-brand-in-india",
       "d2c-brand-cost-india",
@@ -663,7 +663,7 @@ export const RESOURCES: ResourceData[] = [
     ],
     relatedServiceSlugs: ["d2c-growth", "d2c-brand-audit", "d2c-cro"],
     relatedCategorySlugs: ["skincare", "health-supplements", "fmcg"],
-    relatedCaseStudySlugs: ["gowhipped", "bennys-bowl"],
+    relatedCaseStudySlugs: ["bennys-bowl", "the-whole-truth"],
     relatedResourceSlugs: [
       "how-to-reduce-d2c-cac",
       "d2c-contribution-margin",
@@ -770,7 +770,7 @@ export const RESOURCES: ResourceData[] = [
     ],
     relatedServiceSlugs: ["d2c-brand-audit", "d2c-cro", "d2c-growth"],
     relatedCategorySlugs: ["fmcg", "skincare", "fashion-accessories"],
-    relatedCaseStudySlugs: ["gowhipped", "plan-your-legacy"],
+    relatedCaseStudySlugs: ["plan-your-legacy", "the-whole-truth"],
     relatedResourceSlugs: [
       "d2c-cac-india",
       "how-to-reduce-d2c-cac",
@@ -860,7 +860,7 @@ export const RESOURCES: ResourceData[] = [
     ],
     relatedServiceSlugs: ["d2c-growth", "d2c-cro", "d2c-retention", "d2c-brand-audit"],
     relatedCategorySlugs: ["skincare", "healthy-snacking", "fashion-accessories"],
-    relatedCaseStudySlugs: ["bennys-bowl", "gowhipped"],
+    relatedCaseStudySlugs: ["bennys-bowl", "foxtale"],
     relatedResourceSlugs: [
       "d2c-cac-india",
       "d2c-contribution-margin",
