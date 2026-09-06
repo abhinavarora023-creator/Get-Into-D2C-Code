@@ -2,11 +2,40 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
-const STATS = [
-  { label: "Brands Launched", value: 120, suffix: "+" },
-  { label: "Campaigns Deployed", value: 350, suffix: "+" },
-  { label: "Founder Capital Raised", value: 140, suffix: "M+", prefix: "$" },
-  { label: "Years In GetintoD2C", value: 12, suffix: "" },
+interface StatItem {
+  label: string;
+  value: number;
+  suffix: string;
+  prefix?: string;
+  scope: string;
+}
+
+const STATS: StatItem[] = [
+  {
+    label: "Brands Launched",
+    value: 120,
+    suffix: "+",
+    scope: "Studio & Portfolio",
+  },
+  {
+    label: "Campaigns Deployed",
+    value: 350,
+    suffix: "+",
+    scope: "Omnichannel Growth",
+  },
+  {
+    label: "Founder Capital Raised",
+    value: 140,
+    suffix: "M+",
+    prefix: "$",
+    scope: "Ecosystem Network",
+  },
+  {
+    label: "Years Group Heritage",
+    value: 12,
+    suffix: "",
+    scope: "Parlexa (Est. 2013)",
+  },
 ];
 
 function Counter({ value }: { value: number }) {
@@ -46,8 +75,7 @@ export function Stats() {
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-[#ffffff]/80 md:text-lg">
-            Twelve years. Six categories. Hundreds of launches. The numbers we
-            care about most are the ones behind founders sleeping better.
+            Twelve years. Six categories. Hundreds of launches. The track record combines Parlexa's enterprise digital pedigree with GetIntoD2C's dedicated focus on Indian consumer brands.
           </p>
         </div>
 
@@ -69,8 +97,16 @@ export function Stats() {
               <div className="mt-5 text-[11px] uppercase tracking-[0.35em] text-[#ffffff]/70">
                 {s.label}
               </div>
+              <div className="mt-2 text-[10px] font-mono text-white/40">
+                {s.scope}
+              </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Footnote on track record & verification */}
+        <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-white/60">
+          <strong>Attribution Context:</strong> Cumulative figures represent the 12-year institutional digital transformation and agency foundation of parent company Parlexa (est. 2013) alongside GetIntoD2C's specialized consumer product studio and founder ecosystem.
         </div>
       </div>
     </section>

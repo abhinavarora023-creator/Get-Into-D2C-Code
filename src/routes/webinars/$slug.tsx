@@ -49,11 +49,12 @@ export const Route = createFileRoute("/webinars/$slug")({
           content: webinar.excerpt,
         },
         { property: "og:type", content: "video.other" },
-        { property: "og:image", content: webinar.coverImage },
+        { property: "og:url", content: `https://getintod2c.in/webinars/${webinar.slug}` },
+        { property: "og:image", content: webinar.coverImage?.startsWith("http") ? webinar.coverImage : `https://getintod2c.in${webinar.coverImage}` },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: webinar.title },
         { name: "twitter:description", content: webinar.excerpt },
-        { name: "twitter:image", content: webinar.coverImage },
+        { name: "twitter:image", content: webinar.coverImage?.startsWith("http") ? webinar.coverImage : `https://getintod2c.in${webinar.coverImage}` },
       ],
       links: [
         {

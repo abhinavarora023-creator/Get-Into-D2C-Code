@@ -100,11 +100,22 @@ export async function fetchSupabaseBlogPosts(): Promise<UnifiedBlogPost[]> {
 
   try {
     const supabase = createClient(supabaseUrl, supabaseKey);
-    const { data, error } = await supabase
+
+    let timerId: ReturnType<typeof setTimeout> | undefined;
+    const timeoutPromise = new Promise<never>((_, reject) => {
+      timerId = setTimeout(() => reject(new Error('Supabase blog fetch timed out')), 2000);
+    });
+
+    const fetchPromise = supabase
       .from('blog_posts')
       .select('*')
       .eq('status', 'published')
       .order('published_date', { ascending: false });
+
+    const result = await Promise.race([fetchPromise, timeoutPromise]);
+    if (timerId) clearTimeout(timerId);
+
+    const { data, error } = result as any;
 
     if (error || !data) {
       return [];

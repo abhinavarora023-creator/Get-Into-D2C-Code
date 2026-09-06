@@ -18,7 +18,7 @@ export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
       { title: "Admin sign in — GetIntoD2C" },
-      { name: "robots", content: "noindex" },
+      { name: "robots", content: "noindex, nofollow" },
     ],
   }),
   component: AuthPage,

@@ -8,24 +8,28 @@ import {
 
 const FAQS = [
   {
-    q: "Who is this studio for?",
-    a: "Founders and operators building D2C brands who want senior-level thinking on positioning, growth, and retention. If you're between ₹50L and ₹100Cr ARR, or serious about getting there, we are built for you.",
+    q: "What is GetIntoD2C and who is it for?",
+    a: "GetIntoD2C is an India-focused D2C growth studio and founder community for consumer brands. We serve early-stage and scaling consumer founders across FMCG, skincare, snacking, supplements, beverages, and fashion accessories who want senior-level thinking on positioning, GTM, unit economics, and compounding retention.",
   },
   {
-    q: "What's the difference between a Brand Audit and the 3-Month Partnership?",
-    a: "The Brand Audit is a focused, one-time diagnostic. We surface the biggest gaps and hand you a prioritized action plan. The 3-Month Partnership is an ongoing engagement, with weekly 1:1s, reviews, and hands-on coaching as you implement.",
+    q: "What is the difference between the Growth Studio and the Founder Community?",
+    a: "The Growth Studio is our advisory and launchpad arm that works directly with brands on diagnostics, positioning, launch strategy, and margin optimization. The Founder Community is our curated, invitation-only WhatsApp network where operators share unfiltered playbooks and attend private founder dinners.",
   },
   {
-    q: "Do you include execution, or just strategy?",
-    a: "Our partnership is strategy, decisions, and accountability. If you need done-for-you campaigns, creative, or CRO builds, we offer those separately as À La Carte services from the studio.",
+    q: "What services does GetIntoD2C offer?",
+    a: "We offer six core modular capabilities: D2C Brand Audit, Positioning & Identity, Growth Engine (Performance Marketing), GTM Strategy, CRO & Funnel Optimization, and Customer Retention Systems. We also provide end-to-end brand launch advisory.",
   },
   {
-    q: "How do I get started?",
-    a: "Fill out the brief below. We'll send a top-level audit before we meet, then book a 1:1 call to walk through it and decide the right next step together.",
+    q: "Which consumer categories do you specialize in?",
+    a: "We specialize in six consumer product verticals calibrated for Indian market dynamics: Skincare & Personal Care, FMCG, Healthy Snacking, Health Supplements & Nutraceuticals, Beverages, and Fashion Accessories.",
   },
   {
-    q: "Do I need an existing brand to join?",
-    a: "No. We work with pre-launch founders on positioning and GTM, and with revenue-stage brands on scale. What matters is intent and the willingness to move with care.",
+    q: "What is the relationship between GetIntoD2C and Parlexa?",
+    a: "GetIntoD2C is a specialized unit of Parlexa, an established digital transformation and growth consultancy founded in 2013. GetIntoD2C combines Parlexa's decade-plus institutional background with dedicated focus on consumer brand building.",
+  },
+  {
+    q: "How do we get started with GetIntoD2C?",
+    a: "Submit the brief at the bottom of this page or schedule a discovery slot. We evaluate your category, current stage, and unit economics before booking a 1:1 diagnostic call to align on the right roadmap.",
   },
 ];
 

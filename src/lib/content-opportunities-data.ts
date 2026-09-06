@@ -1,0 +1,191 @@
+export interface ContentOpportunity {
+  id: string;
+  title: string;
+  category:
+    | "D2C Fundamentals"
+    | "Brand Positioning"
+    | "Unit Economics & Margins"
+    | "Go-To-Market (GTM)"
+    | "Conversion Rate Optimization (CRO)"
+    | "Retention & LTV"
+    | "Marketplaces & Quick Commerce"
+    | "Packaging & Supply Chain";
+  intent: "Informational" | "Commercial" | "Transactional";
+  priority: "P1" | "P2" | "P3";
+  relatedServiceSlug: string;
+  relatedCategorySlug: string;
+  targetAudience: string;
+  coreQuestion: string;
+  synopsis: string;
+}
+
+export const CONTENT_OPPORTUNITIES: ContentOpportunity[] = [
+  {
+    id: "co-001",
+    title: "How Indian D2C Brands Calculate True Contribution Margin (CM1, CM2, CM3)",
+    category: "Unit Economics & Margins",
+    intent: "Informational",
+    priority: "P1",
+    relatedServiceSlug: "d2c-brand-audit",
+    relatedCategorySlug: "fmcg",
+    targetAudience: "Founders doing ₹10L to ₹1Cr monthly navigating margin compression",
+    coreQuestion: "What is the difference between gross margin and contribution margin in Indian e-commerce?",
+    synopsis: "A clear step-by-step breakdown of factoring logistics, COD gateway cuts, courier weight disputes, and returns into clean contribution margins.",
+  },
+  {
+    id: "co-002",
+    title: "The COD Return-to-Origin (RTO) Playbook: Verification, Fraud Rules, and NDR Flows",
+    category: "Unit Economics & Margins",
+    intent: "Commercial",
+    priority: "P1",
+    relatedServiceSlug: "d2c-brand-audit",
+    relatedCategorySlug: "fashion-accessories",
+    targetAudience: "D2C brands with >40% Cash-on-Delivery share suffering 20%+ RTO",
+    coreQuestion: "How can consumer brands reduce COD RTO without killing checkout conversion?",
+    synopsis: "Tactical methods including automated WhatsApp address validation, OTP confirmation on high-risk pin codes, and prepaid checkout discounts.",
+  },
+  {
+    id: "co-003",
+    title: "Quick Commerce vs. D2C Website: Where Should Indian Consumer Brands Allocate Inventory First?",
+    category: "Marketplaces & Quick Commerce",
+    intent: "Commercial",
+    priority: "P1",
+    relatedServiceSlug: "d2c-growth",
+    relatedCategorySlug: "healthy-snacking",
+    targetAudience: "FMCG and snacking founders evaluating Blinkit, Zepto, and Instamart onboarding",
+    coreQuestion: "Should an early-stage D2C brand prioritize its own website or quick commerce dark stores?",
+    synopsis: "Evaluating margin take-rates, working capital lock-in, SKU velocity, and repeat purchase loyalty across instant delivery platforms versus direct web stores.",
+  },
+  {
+    id: "co-004",
+    title: "Navigating CDSCO & Ayush Cosmetic Licensing for Indian Skincare Startups",
+    category: "Packaging & Supply Chain",
+    intent: "Informational",
+    priority: "P1",
+    relatedServiceSlug: "d2c-positioning",
+    relatedCategorySlug: "skincare",
+    targetAudience: "Pre-launch and early-stage beauty founders developing topical formulations",
+    coreQuestion: "What regulatory approvals and loan licenses are mandatory before selling cosmetics online in India?",
+    synopsis: "A founder-friendly roadmap through State Licensing Authorities, loan manufacturing agreements, stability test certificates (COA), and legal metrology.",
+  },
+  {
+    id: "co-005",
+    title: "Packaging Transit Drop Tests: Preventing Container Leakage & Pump Failures in Courier Hubs",
+    category: "Packaging & Supply Chain",
+    intent: "Informational",
+    priority: "P2",
+    relatedServiceSlug: "d2c-brand-audit",
+    relatedCategorySlug: "skincare",
+    targetAudience: "Personal care and beverage brands experiencing transit damages and negative customer reviews",
+    coreQuestion: "How do you test secondary packaging to survive aggressive automated sorting belts in Indian logistics hubs?",
+    synopsis: "Guidelines on ISTA transit test protocols, induction sealing, pump locking clips, and custom corrugated sleeve calipers.",
+  },
+  {
+    id: "co-006",
+    title: "The Zero-Restock Drop Engine: How Cult Streetwear Brands Protect Gross Margin in India",
+    category: "Brand Positioning",
+    intent: "Informational",
+    priority: "P2",
+    relatedServiceSlug: "d2c-positioning",
+    relatedCategorySlug: "fashion-accessories",
+    targetAudience: "Apparel, accessory, and lifestyle brand founders seeking pricing power without discounts",
+    coreQuestion: "How does limited batch drop merchandising create brand equity and eliminate dead inventory?",
+    synopsis: "Analyzing scarcity-driven release models, community waitlists, and margin preservation in urban apparel.",
+  },
+  {
+    id: "co-007",
+    title: "Automated WhatsApp Post-Purchase Journeys: Day 1 to Day 60 Retention Blueprints",
+    category: "Retention & LTV",
+    intent: "Commercial",
+    priority: "P1",
+    relatedServiceSlug: "d2c-retention",
+    relatedCategorySlug: "health-supplements",
+    targetAudience: "Supplement and personal care founders struggling with single-order customer churn",
+    coreQuestion: "How do consumable consumer brands set up automated repeat replenishment flows on WhatsApp?",
+    synopsis: "Timing replenishment triggers around typical consumption exhaustion curves (Day 25 for 30-day supply) and habit-reinforcing onboarding tips.",
+  },
+  {
+    id: "co-008",
+    title: "Shopify Storefront CRO for India: Optimizing Mobile PDPs for High-Bounce Traffic",
+    category: "Conversion Rate Optimization (CRO)",
+    intent: "Commercial",
+    priority: "P1",
+    relatedServiceSlug: "d2c-cro",
+    relatedCategorySlug: "fmcg",
+    targetAudience: "E-commerce managers and founders with ad traffic converting below 1.8% on mobile",
+    coreQuestion: "What specific layout adjustments lift conversion rates for Indian mobile shoppers?",
+    synopsis: "Sticky Add-to-Cart buttons, upfront delivery timeline estimates by pin code, UPI 1-click payment trust badges, and condensed ingredient highlights.",
+  },
+  {
+    id: "co-009",
+    title: "Negotiating Minimum Order Quantities (MOQs) with Indian Contract Manufacturers as a First-Time Founder",
+    category: "D2C Fundamentals",
+    intent: "Informational",
+    priority: "P1",
+    relatedServiceSlug: "d2c-positioning",
+    relatedCategorySlug: "healthy-snacking",
+    targetAudience: "First-time consumer founders bootstrapping their initial production batches",
+    coreQuestion: "How can a founder get manufacturers to accept 500-unit pilot runs instead of 5,000-unit minimums?",
+    synopsis: "Strategies for offering higher per-unit pilot fees, leveraging shared stock packaging dies, and structuring multi-batch milestone agreements.",
+  },
+  {
+    id: "co-010",
+    title: "Front-of-Pack Nutritional Candor: Clean-Label Storytelling That Builds Unbeatable Trust",
+    category: "Brand Positioning",
+    intent: "Informational",
+    priority: "P2",
+    relatedServiceSlug: "d2c-positioning",
+    relatedCategorySlug: "healthy-snacking",
+    targetAudience: "Founders of packaged foods, beverages, and clean-eating consumer brands",
+    coreQuestion: "How does transparent ingredient disclosure convert skeptical health-conscious Indian consumers?",
+    synopsis: "Translating ingredient simplicity into high-contrast visual packaging assets that stand out on physical and digital shelves.",
+  },
+  {
+    id: "co-011",
+    title: "When to Shift from Meta Performance Ads to Omnichannel Quick Commerce Distribution",
+    category: "Go-To-Market (GTM)",
+    intent: "Commercial",
+    priority: "P1",
+    relatedServiceSlug: "d2c-growth",
+    relatedCategorySlug: "beverages",
+    targetAudience: "Beverage and daily staple founders facing CAC limits on digital performance channels",
+    coreQuestion: "At what revenue milestone should an impulse consumer brand transition budget into dark store availability?",
+    synopsis: "Diagnosing when digital CAC exceeds single-bottle lifetime value and reallocating spend into localized quick commerce discoverability.",
+  },
+  {
+    id: "co-012",
+    title: "Structuring Tiered Bundles & Free-Shipping Thresholds to Lift Average Order Value (AOV)",
+    category: "Unit Economics & Margins",
+    intent: "Transactional",
+    priority: "P2",
+    relatedServiceSlug: "d2c-cro",
+    relatedCategorySlug: "skincare",
+    targetAudience: "Brands with sub-₹700 AOV struggling to absorb fixed ₹90+ courier shipping costs",
+    coreQuestion: "How do you engineer catalog bundles so Indian shoppers voluntarily choose ₹1,200+ cart totals?",
+    synopsis: "Complementary SKU bundling, dynamic progress bars for free shipping, and tiered checkout gift incentives.",
+  },
+  {
+    id: "co-013",
+    title: "FSSAI Compliance for Packaged Goods: Mandatory Labelling, Licensing, and Shelf-Life Testing",
+    category: "Packaging & Supply Chain",
+    intent: "Informational",
+    priority: "P2",
+    relatedServiceSlug: "d2c-positioning",
+    relatedCategorySlug: "fmcg",
+    targetAudience: "Food, beverage, and confectionery startups preparing for nationwide retail sale",
+    coreQuestion: "What regulatory standards does FSSAI require on D2C food packaging labels?",
+    synopsis: "Font height rules, nutritional declaration panels, veg/non-veg logos, allergens, manufacturing dates, and accredited NABL lab testing protocols.",
+  },
+  {
+    id: "co-014",
+    title: "Building an Anti-Agency Founder Community: Why Operators Need Candid Peer Feedback",
+    category: "D2C Fundamentals",
+    intent: "Informational",
+    priority: "P3",
+    relatedServiceSlug: "d2c-positioning",
+    relatedCategorySlug: "fmcg",
+    targetAudience: "Consumer brand founders looking for unbiased operator connections without agency sales pitches",
+    coreQuestion: "Why do traditional agency relationships fail early-stage D2C brand builders?",
+    synopsis: "The philosophy behind GetIntoD2C's private founder network: raw unit economics transparency, supplier referrals, and real operating playbooks.",
+  },
+];

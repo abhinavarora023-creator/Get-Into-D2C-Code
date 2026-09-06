@@ -30,8 +30,8 @@ export const Route = createFileRoute("/webinars/")({
           "Recorded teardowns, founder round-tables, and actionable D2C playbooks for Indian consumer founders.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/webinars" },
-      { property: "og:image", content: "/webinar-speakers-panel.png" },
+      { property: "og:url", content: "https://getintod2c.in/webinars" },
+      { property: "og:image", content: "https://getintod2c.in/webinar-speakers-panel.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/webinars/")({
         content:
           "Watch exclusive masterclasses and teardowns with seasoned D2C founders and operators.",
       },
-      { name: "twitter:image", content: "/webinar-speakers-panel.png" },
+      { name: "twitter:image", content: "https://getintod2c.in/webinar-speakers-panel.png" },
     ],
     links: [
       { rel: "canonical", href: "https://getintod2c.in/webinars" },
