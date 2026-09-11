@@ -12,9 +12,9 @@ export const Route = createFileRoute("/thank-you")({
       {
         name: "description",
         content:
-          "Your seat for the Proven Playbook to Build a D2C Brand workshop on 26th August is confirmed.",
+          "Your seat for the Proven Playbook to Build a D2C Brand workshop and upcoming masterclasses is confirmed.",
       },
-      { name: "robots", content: "noindex" },
+      { name: "robots", content: "noindex, nofollow" },
     ],
   }),
   component: ThankYou,

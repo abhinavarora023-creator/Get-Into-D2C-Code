@@ -10,3 +10,9 @@
 
 [functions.environment]
   NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/registerations"
+  to = "/registrations"
+  status = 301
+  force = true

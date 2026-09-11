@@ -26,7 +26,7 @@ const TESTIMONIALS = [
   },
   {
     name: "Raunak Mahandarani",
-    role: "Founder, Healthy Snacking",
+    role: "Founder, BakedBuzz (Healthy Snacking)",
     initials: "RM",
     quote:
       "Launching a healthy snacking brand is no small task. Having this team in my corner has made all the difference. They get the vision.",

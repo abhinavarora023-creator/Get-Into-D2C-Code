@@ -7,6 +7,26 @@ export type BlogSection =
   | { type: "quote"; text: string; cite?: string }
   | { type: "table"; headers: string[]; rows: string[][] };
 
+export type BlogAuthor = {
+  name: string;
+  role: string;
+  bio?: string;
+  avatar?: string;
+  profileUrl?: string;
+  socialLinks?: {
+    twitter?: string;
+    linkedin?: string;
+    github?: string;
+  };
+};
+
+export const EDITORIAL_AUTHOR: BlogAuthor = {
+  name: "GetIntoD2C Editorial & Advisory Desk",
+  role: "Curated by Studio Operators & D2C Practitioners",
+  bio: "Field playbooks, unit economics models, and growth teardowns engineered by GetIntoD2C's studio team and partner operators across Indian consumer categories.",
+  profileUrl: "https://getintod2c.in/about",
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -15,6 +35,9 @@ export type BlogPost = {
   category: string;
   date: string;
   sections: BlogSection[];
+  author?: BlogAuthor;
+  relatedServiceSlugs?: string[];
+  relatedCategorySlugs?: string[];
 };
 
 export const BLOG_POSTS: BlogPost[] = [

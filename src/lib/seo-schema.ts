@@ -1,6 +1,7 @@
 import { BLOG_POSTS, type BlogPost } from "./blog-posts";
 
-const SITE_URL = "https://getintod2c.in";
+export const BASE_URL = "https://getintod2c.in";
+export const SITE_URL = BASE_URL;
 const LOGO_URL = "https://getintod2c.in/getintod2c-logo.png";
 
 /**
@@ -14,7 +15,7 @@ export function createJsonLdScript(schema: Record<string, any> | Array<Record<st
 }
 
 /**
- * 1. Homepage Schemas: Organization, WebSite, 6 Services, 5 FAQs
+ * 1. Homepage Schemas: Organization, WebSite, 6 Services, 6 FAQs
  */
 export function getHomepageSchemas() {
   const organizationSchema = {
@@ -26,8 +27,7 @@ export function getHomepageSchemas() {
     url: SITE_URL,
     logo: LOGO_URL,
     description:
-      "A warm, considered D2C brand launchpad, building agency, and GTM strategy consultancy for founders of FMCG, skincare, healthy snacking, health supplements, beverage, and fashion accessories in India.",
-    foundingDate: "2013",
+      "GetIntoD2C is an India-focused D2C growth studio and founder community for consumer brands. A unit of Parlexa.",
     parentOrganization: {
       "@type": "Organization",
       name: "Parlexa",
@@ -38,7 +38,7 @@ export function getHomepageSchemas() {
       "D2C Brand Building",
       "GTM Strategy",
       "Brand Audit",
-      "Unit Economics",
+      "Unit Economics Optimization",
       "Customer Acquisition Cost Optimization",
       "Conversion Rate Optimization",
       "Customer Retention Systems",
@@ -53,7 +53,7 @@ export function getHomepageSchemas() {
     name: "GetIntoD2C",
     url: SITE_URL,
     description:
-      "D2C Brand Launchpad & Growth Studio India | GTM Strategy & Brand Building",
+      "India-focused D2C growth studio and founder community for consumer brands.",
     publisher: {
       "@id": `${SITE_URL}/#organization`,
     },
@@ -61,52 +61,46 @@ export function getHomepageSchemas() {
 
   const services = [
     {
-      title: "D2C Brand Audit Services",
+      title: "D2C Brand Audit",
+      slug: "d2c-brand-audit",
       serviceType: "D2C Brand Audit & Margin Optimization",
       description:
-        "A calm, honest diagnostic of where your D2C brand leaks margin: positioning, pricing architecture, CAC, and unit economics.",
+        "Comprehensive diagnostic of positioning, unit economics, contribution margins, and marketing leakage.",
     },
     {
-      title: "D2C GTM Strategy Consultancy",
-      serviceType: "Go-To-Market Strategy Consultancy",
+      title: "Brand Positioning & Identity",
+      slug: "d2c-positioning",
+      serviceType: "Brand Positioning & Identity Architecture",
       description:
-        "Launch plans, pricing logic, channel orchestration, and clear timelines from first shelf to first crore for modern D2C brands.",
+        "Defensible market positioning, whitespace analysis, customer persona mapping, and brand narrative design.",
     },
     {
-      title: "End to End D2C Brand Launch Services",
-      serviceType: "D2C Brand Launchpad & Incubator",
+      title: "Growth Engine & Performance",
+      slug: "d2c-growth",
+      serviceType: "Paid Acquisition & Funnel Architecture",
       description:
-        "Complete institutional launchpad for consumer founders: product validation, manufacturer sourcing, tech stack, compliance, and growth engine.",
+        "Full-funnel Meta and Google acquisition architecture engineered for scalable payback periods.",
     },
     {
-      title: "D2C Brand Building & Positioning Agency",
-      serviceType: "Brand Positioning & Identity Design",
+      title: "Go-To-Market (GTM) Strategy",
+      slug: "d2c-gtm-strategy",
+      serviceType: "Omnichannel Launch & Channel Strategy",
       description:
-        "Sharper positioning frameworks, whitespace analysis, messaging, and visual identity systems that resonate with Indian consumers.",
+        "Phased launch roadmaps, channel sequencing across Shopify, Amazon, and Quick Commerce.",
     },
     {
-      title: "Growth Engine & Performance Marketing",
-      serviceType: "D2C Growth Marketing",
+      title: "Conversion Rate Optimization (CRO)",
+      slug: "d2c-cro",
+      serviceType: "E-Commerce CRO & Checkout Optimization",
       description:
-        "Meta, Google Search, marketplace, and creator-led acquisition systems built for compounding scale and lower CAC.",
+        "Mobile UX friction elimination, average order value expansion, and RTO risk mitigation.",
     },
     {
-      title: "D2C Conversion Rate Optimization (CRO) & Funnel",
-      serviceType: "E-Commerce CRO & Funnel Optimization",
-      description:
-        "Higher AOV, frictionless mobile checkouts, RTO reduction, and high-converting product detail pages.",
-    },
-    {
-      title: "D2C Customer Retention Systems",
+      title: "Customer Retention Systems",
+      slug: "d2c-retention",
       serviceType: "Retention & Lifecycle Marketing",
       description:
-        "Repeat order rate optimization, automated WhatsApp commerce, and subscription flows that maximize customer LTV.",
-    },
-    {
-      title: "Niche Category D2C Launchpad",
-      serviceType: "Vertical-Specific D2C Incubation",
-      description:
-        "Specialized launch strategies for FMCG, skincare, healthy snacking, health supplements, beverage, and fashion accessories brands.",
+        "Automated WhatsApp workflows, email replenishment sequences, and VIP repurchase loops.",
     },
   ];
 
@@ -116,10 +110,14 @@ export function getHomepageSchemas() {
     name: s.title,
     serviceType: s.serviceType,
     description: s.description,
+    url: `${SITE_URL}/services/${s.slug}`,
     provider: {
       "@id": `${SITE_URL}/#organization`,
     },
-    areaServed: "India",
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
   }));
 
   const faqSchema = {
@@ -128,50 +126,50 @@ export function getHomepageSchemas() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Who is GetIntoD2C launch studio for?",
+        name: "What is GetIntoD2C?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Founders and operators building D2C brands who want senior-level thinking on positioning, GTM strategy, unit economics, and retention. Whether you're pre-launch or scaling between ₹50L and ₹100Cr ARR, we provide end-to-end guidance.",
+          text: "GetIntoD2C is an India-focused D2C growth studio and founder community for consumer brands. It operates as a specialized growth business unit of Parlexa.",
         },
       },
       {
         "@type": "Question",
-        name: "What does an End-to-End D2C Brand Launch Service include?",
+        name: "Who is GetIntoD2C for, and where does it operate?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Our end-to-end launchpad covers market validation, white space positioning, supplier and manufacturer guidance, pricing and unit economics architecture, Shopify tech stack setup, compliance and logistics integration, and omnichannel GTM execution.",
+          text: "GetIntoD2C is built specifically for founders and operators of Indian consumer brands. We serve early-stage founders launching new concepts as well as revenue-stage founders looking to scale profitably.",
         },
       },
       {
         "@type": "Question",
-        name: "How does GetIntoD2C help lower CAC and fix leaking margins in D2C?",
+        name: "What services does the Growth Studio offer?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Through our D2C Brand Audit and Growth Engine, we diagnose margin leakages across ad spend, RTO/COD costs, discount dependency, and packaging. We optimize unit economics, improve CRO on product pages, and deploy automated WhatsApp retention flows to increase repeat purchase rates.",
+          text: "Our studio provides six core disciplines: Brand Audit, Brand Positioning & Identity, Growth Engine, Go-To-Market Strategy, Conversion Rate Optimization (CRO), and Customer Retention Systems.",
         },
       },
       {
         "@type": "Question",
-        name: "Which niche D2C categories do you specialize in?",
+        name: "Which consumer categories does GetIntoD2C specialize in?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We specialize in high-growth consumer categories including FMCG, Skincare & Personal Care, Healthy Snacking, Health Supplements & Nutraceuticals, Beverages, and Fashion Accessories.",
+          text: "We focus on six high-potential Indian consumer sectors: Skincare & Personal Care, FMCG, Healthy Snacking, Health Supplements & Nutraceuticals, Beverages, and Fashion Accessories.",
         },
       },
       {
         "@type": "Question",
-        name: "What's the difference between a Brand Audit and the 3-Month Partnership?",
+        name: "What is the Founder Community, and how do founders join?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "The Brand Audit is a focused diagnostic surfacing gaps in positioning, pricing, and unit economics with a prioritized action plan. The 3-Month Partnership is an ongoing advisory engagement with weekly 1:1 sessions, strategy reviews, and hands-on coaching.",
+          text: "The Founder Community is a curated, invitation-only network for active Indian D2C operators to exchange real playbooks, vetted vendors, and tactical advice. Founders apply via our For Founders page.",
         },
       },
       {
         "@type": "Question",
-        name: "How much capital is required to launch a D2C brand in India?",
+        name: "What is the relationship between GetIntoD2C and Parlexa?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A lean D2C launch in India typically requires between ₹3 Lakhs to ₹10 Lakhs for initial inventory (with low MOQs), packaging, e-commerce tech stack, compliance, and initial validation ad spend. Our launchpad helps founders avoid unnecessary capital burn.",
+          text: "GetIntoD2C is an operating unit of Parlexa, an enterprise digital and technology advisory firm founded in 2013.",
         },
       },
     ],
@@ -259,7 +257,7 @@ export function getForFoundersSchemas() {
 }
 
 /**
- * 3. /registerations Page Schemas: BreadcrumbList + Event/EducationEvent
+ * 3. /registrations Page Schemas: BreadcrumbList + EducationEvent
  */
 export function getRegistrationsSchemas() {
   const breadcrumbSchema = {
@@ -275,8 +273,8 @@ export function getRegistrationsSchemas() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Register",
-        item: `${SITE_URL}/registerations`,
+        name: "Workshop Registrations",
+        item: `${SITE_URL}/registrations`,
       },
     ],
   };
@@ -286,13 +284,12 @@ export function getRegistrationsSchemas() {
     "@type": "EducationEvent",
     name: "The Proven Playbook to Build a D2C Brand in India",
     description:
-      "Join us for an exclusive live workshop with successful D2C founders and Angel Investors. Learn how to build, scale and grow a profitable D2C business in India.",
-    startDate: "2026-08-26T16:00:00+05:30",
+      "Live interactive masterclasses and upcoming cohorts for Indian consumer brand founders. Gain access to practical frameworks, unit economics models, and live speaker recordings.",
     eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     location: {
       "@type": "VirtualLocation",
-      url: `${SITE_URL}/registerations`,
+      url: `${SITE_URL}/registrations`,
     },
     image: `${SITE_URL}/gaurav-virmani.jpg`,
     organizer: {
@@ -300,20 +297,13 @@ export function getRegistrationsSchemas() {
       name: "GetIntoD2C",
       url: SITE_URL,
     },
-    performer: {
-      "@type": "Person",
-      name: "Gaurav Virmani",
-      jobTitle: "Founder @ Go Whipped, 3X D2C Founder",
-    },
     offers: {
       "@type": "Offer",
       price: "59",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: `${SITE_URL}/registerations`,
-      validFrom: "2026-08-01",
+      url: `${SITE_URL}/registrations`,
     },
-    maximumAttendeeCapacity: 200,
   };
 
   return [breadcrumbSchema, eventSchema];
@@ -345,7 +335,7 @@ export function getBlogIndexSchemas() {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Journal, GetIntoD2C",
+    name: "Journal | GetIntoD2C",
     description:
       "Field notes, case studies and playbooks on building D2C brands in India.",
     url: `${SITE_URL}/blog`,
@@ -395,21 +385,37 @@ export function getBlogPostSchemas(post: BlogPost) {
     ],
   };
 
+  const authorSchema = post.author
+    ? {
+        "@type": post.author.name.includes("Desk") || post.author.name.includes("Team")
+          ? "Organization"
+          : "Person",
+        name: post.author.name,
+        jobTitle: post.author.role,
+        url: post.author.profileUrl || `${SITE_URL}/about`,
+      }
+    : {
+        "@type": "Organization",
+        name: "GetIntoD2C Editorial & Advisory Desk",
+        url: `${SITE_URL}/about`,
+      };
+
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
-    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/blog/${post.slug}`,
+    },
+    url: `${SITE_URL}/blog/${post.slug}`,
     datePublished: post.date,
     articleSection: post.category,
-    author: {
-      "@type": "Organization",
-      name: "GetIntoD2C",
-      url: SITE_URL,
-    },
+    author: authorSchema,
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "GetIntoD2C",
       url: SITE_URL,
       logo: {
@@ -500,12 +506,10 @@ export function getWebinarPostSchemas(webinar: any) {
     "@type": "VideoObject",
     name: webinar.title,
     description: webinar.excerpt,
-    thumbnailUrl: webinar.coverImage.startsWith("http") ? webinar.coverImage : `${SITE_URL}${webinar.coverImage}`,
+    thumbnailUrl: webinar.coverImage?.startsWith("http") ? webinar.coverImage : `${SITE_URL}${webinar.coverImage || "/gaurav-virmani.jpg"}`,
     uploadDate: "2026-08-01T00:00:00+05:30",
     embedUrl: webinar.youtubeId ? `https://www.youtube.com/embed/${webinar.youtubeId}` : undefined,
   };
 
   return [breadcrumbSchema, videoSchema];
 }
-
-

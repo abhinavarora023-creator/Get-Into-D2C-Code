@@ -26,40 +26,35 @@ export const Route = createFileRoute("/")({
     meta: [
       {
         title:
-          "GetIntoD2C — D2C Brand Launchpad & Growth Studio India | GTM & Brand Building",
+          "GetIntoD2C — D2C Growth Studio & Founder Community India",
       },
       {
         name: "description",
         content:
-          "India's premier D2C brand launchpad and GTM strategy consultancy for FMCG, skincare, snacking, health supplements, beverage, and fashion accessories founders. End-to-end brand launch, audits & unit economics.",
-      },
-      {
-        name: "keywords",
-        content:
-          "D2C brand launchpad India, D2C brand building agency, D2C GTM strategy consultancy, Hire D2C brand consultant, D2C launch studio for founders, D2C brand audit services, End to end D2C brand launch services, How to launch a FMCG D2C brand, Skincare D2C brand launch agency",
+          "GetIntoD2C is an India-focused D2C growth studio and founder community for consumer brands. A unit of Parlexa. We help founders with GTM strategy, brand positioning, unit economics, and compounding scale.",
       },
       {
         property: "og:title",
         content:
-          "GetIntoD2C — D2C Brand Launchpad & Growth Studio India",
+          "GetIntoD2C — D2C Growth Studio & Founder Community India",
       },
       {
         property: "og:description",
         content:
-          "A D2C launchpad for founders building the next generation of consumer brands in India. GTM strategy, brand audits, positioning, unit economics and compounding growth.",
+          "GetIntoD2C is an India-focused D2C growth studio and founder community for consumer brands. A unit of Parlexa. Brand strategy, positioning, unit economics, and omnichannel scale.",
       },
-      { property: "og:image", content: "/og-image.png" },
-      { property: "og:url", content: "/" },
+      { property: "og:image", content: "https://getintod2c.in/og-image.png" },
+      { property: "og:url", content: "https://getintod2c.in/" },
       {
         name: "twitter:title",
-        content: "GetIntoD2C — D2C Brand Launchpad & Growth Studio India",
+        content: "GetIntoD2C — D2C Growth Studio & Founder Community India",
       },
       {
         name: "twitter:description",
         content:
-          "End-to-end D2C brand launchpad, GTM consultancy & brand audit services for Indian consumer founders.",
+          "GetIntoD2C is an India-focused D2C growth studio and founder community for consumer brands. A unit of Parlexa.",
       },
-      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:image", content: "https://getintod2c.in/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://getintod2c.in/" }],
     scripts: getHomepageSchemas().map(createJsonLdScript),

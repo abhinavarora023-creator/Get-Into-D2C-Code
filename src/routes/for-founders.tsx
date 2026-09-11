@@ -54,8 +54,8 @@ export const Route = createFileRoute("/for-founders")({
           "A curated WhatsApp-only space where early-stage and high-growth D2C founders share what's working, solve unit economics, and collaborate.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/for-founders" },
-      { property: "og:image", content: "/og-image.png" },
+      { property: "og:url", content: "https://getintod2c.in/for-founders" },
+      { property: "og:image", content: "https://getintod2c.in/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",

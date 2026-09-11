@@ -2,6 +2,17 @@ User-agent: *
 Allow: /
 Disallow: /_authenticated/
 Disallow: /admin
+Disallow: /auth
 Disallow: /thank-you
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /_authenticated/
+Disallow: /admin
+Disallow: /auth
+Disallow: /thank-you
+
+User-agent: OAI-AdsBot
+Allow: /
 
 Sitemap: https://getintod2c.in/sitemap.xml

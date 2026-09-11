@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "node --experimental-strip-types src/scripts/generate-sitemap.ts && vite build",
+    "sitemap": "node --experimental-strip-types src/scripts/generate-sitemap.ts",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",

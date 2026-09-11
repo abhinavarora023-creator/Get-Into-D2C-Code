@@ -5,13 +5,14 @@ import { Menu, X } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 
 const LINKS: [string, string][] = [
-  ["Categories", "/#industries"],
-  ["Services", "/#services"],
-  ["Process", "/#process"],
-  ["Webinars", "/registerations"],
+  ["Services", "/services"],
+  ["Categories", "/categories"],
+  ["Case Studies", "/case-studies"],
+  ["Resources", "/resources"],
+  ["Webinars", "/webinars"],
   ["For Founders", "/for-founders"],
   ["Journal", "/blog"],
-  ["FAQs", "/#faq"],
+  ["About", "/about"],
 ];
 
 export function Nav() {
@@ -31,7 +32,7 @@ export function Nav() {
         <a href="/" className="flex items-center gap-3">
           <BrandLogo eager className="h-12 w-auto md:h-[3.25rem]" />
         </a>
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-6 lg:gap-8 md:flex">
           {LINKS.map(([label, href]) => (
             <a
               key={href}

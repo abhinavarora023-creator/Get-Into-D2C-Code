@@ -76,10 +76,10 @@ export function WebinarPopup() {
 
               <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#0a0a0a]/60">
                 <span className="inline-flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5 text-[#e11d2a]" /> 26th August 2026
+                  <Calendar className="h-3.5 w-3.5 text-[#e11d2a]" /> Upcoming Live Cohort
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <Clock className="h-3.5 w-3.5 text-[#e11d2a]" /> 4:00 PM IST
+                  <Clock className="h-3.5 w-3.5 text-[#e11d2a]" /> Online Masterclass
                 </span>
               </div>
 
@@ -92,7 +92,7 @@ export function WebinarPopup() {
               </div>
 
               <a
-                href="/registerations"
+                href="/registrations"
                 onClick={() => {
                   trackEvent("InitiateCheckout", { value: 59, currency: "INR" });
                   close();

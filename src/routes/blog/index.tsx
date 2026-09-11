@@ -37,8 +37,8 @@ export const Route = createFileRoute("/blog/")({
           "Proven case studies, GTM frameworks, and margin optimization playbooks for D2C founders in India.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/blog" },
-      { property: "og:image", content: "/og-image.png" },
+      { property: "og:url", content: "https://getintod2c.in/blog" },
+      { property: "og:image", content: "https://getintod2c.in/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",

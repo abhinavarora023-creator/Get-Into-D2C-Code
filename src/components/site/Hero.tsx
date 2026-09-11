@@ -4,12 +4,12 @@ import { ArrowUpRight } from "lucide-react";
 import { MagneticButton } from "./MagneticButton";
 
 const CATEGORY_TAGS = [
-  "FMCG",
-  "Skincare",
-  "Snacking",
-  "Health Supplements",
-  "Beverage",
-  "Fashion Accessories",
+  { label: "FMCG", href: "/categories/fmcg" },
+  { label: "Skincare", href: "/categories/skincare" },
+  { label: "Snacking", href: "/categories/healthy-snacking" },
+  { label: "Health Supplements", href: "/categories/health-supplements" },
+  { label: "Beverage", href: "/categories/beverages" },
+  { label: "Fashion Accessories", href: "/categories/fashion-accessories" },
 ];
 
 export function Hero() {
@@ -24,7 +24,7 @@ export function Hero() {
           className="mb-10 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-[#e11d2a]"
         >
           <span className="h-px w-8 bg-[#e11d2a]" />
-          GetintoD2C, A Unit of Parlexa
+          GetIntoD2C · A Unit of Parlexa
           <span className="h-px w-8 bg-[#e11d2a]" />
         </motion.span>
 
@@ -41,9 +41,7 @@ export function Hero() {
           initial={{ opacity: 1, y: 0 }}
           className="mt-10 max-w-2xl text-base leading-relaxed text-[#0a0a0a]/75 md:text-xl"
         >
-          A D2C launchpad for founders of consumer brands. We move founders from
-          scattered ideas to shelf-ready clarity, across FMCG, skincare, snacking,
-          health supplements, beverage and fashion accessories.
+          GetIntoD2C is an India-focused D2C growth studio and founder community for consumer brands. We help founders move from scattered ideas to shelf-ready clarity, across FMCG, skincare, snacking, health supplements, beverage and fashion accessories.
         </motion.p>
 
         <motion.div
@@ -56,9 +54,9 @@ export function Hero() {
               <ArrowUpRight className="h-4 w-4" />
             </MagneticButton>
           </a>
-          <a href="#industries" className="w-full sm:w-auto">
+          <a href="/services" className="w-full sm:w-auto">
             <MagneticButton variant="ghost" strength={0.12}>
-              Explore GetintoD2C
+              Explore Services
             </MagneticButton>
           </a>
         </motion.div>
@@ -72,12 +70,13 @@ export function Hero() {
           </span>
           <div className="flex flex-wrap justify-center gap-2">
             {CATEGORY_TAGS.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-black/70 bg-[#ffffff]/60 px-4 py-1.5 text-xs text-[#0a0a0a]/80 backdrop-blur-sm"
+              <a
+                key={tag.label}
+                href={tag.href}
+                className="rounded-full border border-black/70 bg-[#ffffff]/60 px-4 py-1.5 text-xs text-[#0a0a0a]/80 backdrop-blur-sm transition-colors hover:border-[#e11d2a] hover:text-[#e11d2a]"
               >
-                {tag}
-              </span>
+                {tag.label}
+              </a>
             ))}
           </div>
         </motion.div>
