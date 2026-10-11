@@ -688,12 +688,12 @@ function ResourceDetailPage() {
             <span className="text-serif-italic text-[#e11d2a]">D2C Economics?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-white/70">
-            Book a 1:1 strategy review with GetIntoD2C studio operators to audit your unit economics, packaging compliance, supplier terms, and customer acquisition efficiency.
+            Apply for a focused review from GetIntoD2C studio operators covering your unit economics, packaging compliance, supplier terms, and customer acquisition efficiency.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a href="/#book">
               <MagneticButton>
-                Book Diagnostic Session <ArrowUpRight className="h-4 w-4" />
+                Submit Your Application <ArrowUpRight className="h-4 w-4" />
               </MagneticButton>
             </a>
             <Link to="/resources">

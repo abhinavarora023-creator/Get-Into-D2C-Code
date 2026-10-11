@@ -310,12 +310,10 @@ function AboutPage() {
 
               <div className="mt-6 pt-4 border-t border-black/10">
                 <a
-                  href="https://cal.id/abhinav-arora/getintod2c"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/#book"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#e11d2a] hover:underline"
                 >
-                  Book Diagnostic Session <ArrowUpRight className="h-3.5 w-3.5" />
+                  Apply to the Launchpad <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </div>
             </div>
@@ -495,16 +493,14 @@ function AboutPage() {
                 1:1 Studio Diagnostic Session
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-[#0a0a0a]/70">
-                Book a focused diagnostic call with Abhinav Arora and the studio team to dissect your margin leaks, positioning whitespace, or launch roadmap.
+                Apply for a focused diagnostic review with Abhinav Arora and the studio team to examine your margin leaks, positioning whitespace, or launch roadmap.
               </p>
               <div className="mt-6">
                 <a
-                  href="https://cal.id/abhinav-arora/getintod2c"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/#book"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#e11d2a] hover:underline"
                 >
-                  Schedule Studio Call <ArrowUpRight className="h-4 w-4" />
+                  Submit Your Application <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
             </div>

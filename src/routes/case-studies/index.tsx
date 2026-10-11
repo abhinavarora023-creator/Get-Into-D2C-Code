@@ -282,12 +282,12 @@ function CaseStudiesIndexPage() {
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-white/70">
-            Whether you are validating your first formulation or optimizing CAC and RTO, talk directly to studio operators.
+            Whether you are validating your first formulation or optimizing CAC and RTO, share your context with our studio operators.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="/#book">
               <MagneticButton>
-                Book Diagnostic Session <ArrowUpRight className="h-4 w-4" />
+                Apply to the Launchpad <ArrowUpRight className="h-4 w-4" />
               </MagneticButton>
             </a>
             <Link to="/services">

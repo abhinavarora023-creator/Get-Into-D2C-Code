@@ -425,12 +425,12 @@ function ResourcesHubPage() {
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-white/70">
-            Book an honest diagnostic session with studio operators to evaluate your unit economics, positioning, and growth channels.
+            Apply for an honest diagnostic review of your unit economics, positioning, and growth channels.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="/#book">
               <MagneticButton>
-                Book Diagnostic Session <ArrowUpRight className="h-4 w-4" />
+                Apply to the Launchpad <ArrowUpRight className="h-4 w-4" />
               </MagneticButton>
             </a>
             <Link to="/services">

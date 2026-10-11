@@ -321,7 +321,7 @@ function BlogPostPage() {
             href="/#book"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#e11d2a] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#c41a24]"
           >
-            Schedule Diagnostic Brief
+            Submit Launchpad Application
             <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>

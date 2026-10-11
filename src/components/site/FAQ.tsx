@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     q: "How do we get started with GetIntoD2C?",
-    a: "Submit the brief at the bottom of this page or schedule a discovery slot. We evaluate your category, current stage, and unit economics before booking a 1:1 diagnostic call to align on the right roadmap.",
+    a: "Submit the application at the bottom of this page. We evaluate your category, current stage, and unit economics, then follow up personally if there is a strong fit for the Launchpad.",
   },
 ];
 
