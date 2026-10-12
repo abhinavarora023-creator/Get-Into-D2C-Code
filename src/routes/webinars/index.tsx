@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Play, Sparkles, ArrowRight, Users, Video, Calendar, Layers, Award } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { openCommunityApplyDialog } from "@/components/site/ApplyDialog";
 import { WEBINARS } from "@/lib/webinars";
 import { getWebinarsIndexSchemas, createJsonLdScript } from "@/lib/seo-schema";
 
@@ -251,13 +250,14 @@ function WebinarsIndexPage() {
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row">
-                <button
-                  type="button"
-                  onClick={() => openCommunityApplyDialog()}
+                <a
+                  href="https://chat.whatsapp.com/CjNzcHLjej6BoetwplTJbQ?mode=gi_t"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#e11d2a] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#b8151f]"
                 >
                   Join Founders' WhatsApp Community <ArrowRight className="h-4 w-4" />
-                </button>
+                </a>
               </div>
             </div>
           </div>

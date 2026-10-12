@@ -223,7 +223,7 @@ export function getForFoundersSchemas() {
         name: "How is membership decided?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Every application is read personally. We look for early-stage D2C founders with real intent — pre-launch is welcome, so are revenue-stage teams. It's about signal, not scale.",
+          text: "The community is for active D2C founders with real intent — pre-launch founders and revenue-stage teams are both welcome. Join through the WhatsApp invite and respect the founder-only community guidelines.",
         },
       },
       {
@@ -231,7 +231,7 @@ export function getForFoundersSchemas() {
         name: "Is there a fee to join?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. The community is free and invitation-based.",
+          text: "No. The WhatsApp community is free to join for active D2C founders.",
         },
       },
       {
@@ -247,7 +247,7 @@ export function getForFoundersSchemas() {
         name: "Can my co-founder join?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes — add their details in the form. Co-founders are reviewed together so the group stays intimate.",
+          text: "Yes. Share the WhatsApp community invite with an active co-founder so they can join directly.",
         },
       },
     ],

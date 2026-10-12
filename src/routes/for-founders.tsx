@@ -1,7 +1,6 @@
 "use client";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import {
   ArrowUpRight,
   MessageCircle,
@@ -19,12 +18,11 @@ import {
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { MagneticButton } from "@/components/site/MagneticButton";
-import { ApplyDialog } from "@/components/site/ApplyDialog";
 
 import { getForFoundersSchemas, createJsonLdScript } from "@/lib/seo-schema";
 
-const ApplyCtx = createContext<() => void>(() => {});
-const useOpenApply = () => useContext(ApplyCtx);
+const WHATSAPP_COMMUNITY_URL =
+  "https://chat.whatsapp.com/CjNzcHLjej6BoetwplTJbQ?mode=gi_t";
 
 export const Route = createFileRoute("/for-founders")({
   head: () => ({
@@ -36,7 +34,7 @@ export const Route = createFileRoute("/for-founders")({
       {
         name: "description",
         content:
-          "An exclusive, invitation-only WhatsApp community and launch studio for D2C founders in India. Connect with operators, share growth strategies, and scale faster.",
+          "A private WhatsApp community and launch studio for D2C founders in India. Connect with operators, share growth strategies, and scale faster.",
       },
       {
         name: "keywords",
@@ -64,7 +62,7 @@ export const Route = createFileRoute("/for-founders")({
       {
         name: "twitter:description",
         content:
-          "An exclusive, invitation-only community for D2C founders in India. Learn, collaborate, and scale.",
+          "A private community for D2C founders in India. Learn, collaborate, and scale.",
       },
       { name: "twitter:image", content: "/og-image.png" },
     ],
@@ -88,7 +86,7 @@ const WHY = [
   {
     icon: UsersRound,
     title: "Curated, kept small on purpose",
-    body: "Every member is personally reviewed. The group stays small so every conversation stays worth reading.",
+    body: "The group stays focused on active founders so every conversation remains useful and worth reading.",
   },
   {
     icon: Lightbulb,
@@ -124,11 +122,11 @@ const FAQS = [
   },
   {
     q: "How is membership decided?",
-    a: "Every application is read personally. We look for early-stage D2C founders with real intent — pre-launch is welcome, so are revenue-stage teams. It's about signal, not scale.",
+    a: "The community is for active D2C founders with real intent — pre-launch founders and revenue-stage teams are both welcome. Join through the WhatsApp invite and respect the founder-only community guidelines.",
   },
   {
     q: "Is there a fee to join?",
-    a: "No. The community is free and invitation-based.",
+    a: "No. The WhatsApp community is free to join for active D2C founders.",
   },
   {
     q: "What about in-person events?",
@@ -136,37 +134,30 @@ const FAQS = [
   },
   {
     q: "Can my co-founder join?",
-    a: "Yes — add their details in the form. Co-founders are reviewed together so the group stays intimate.",
+    a: "Yes. Share the WhatsApp community invite with an active co-founder so they can join directly.",
   },
 ];
 
 function ForFoundersPage() {
-  const [open, setOpen] = useState(false);
-  const openApply = useCallback(() => setOpen(true), []);
-
   return (
-    <ApplyCtx.Provider value={openApply}>
-      <main className="relative bg-[#ffffff] text-[#0a0a0a]">
-        <Nav />
-        <Hero />
-        <WhySection />
-        <WhoItsFor />
-        <WhatsInside />
-        <SocialProof />
-        <FAQSection />
-        <FinalCta />
-        <Footer />
-        <StickyMobileCTA />
-        <ApplyDialog open={open} onOpenChange={setOpen} />
-      </main>
-    </ApplyCtx.Provider>
+    <main className="relative bg-[#ffffff] text-[#0a0a0a]">
+      <Nav />
+      <Hero />
+      <WhySection />
+      <WhoItsFor />
+      <WhatsInside />
+      <SocialProof />
+      <FAQSection />
+      <FinalCta />
+      <Footer />
+      <StickyMobileCTA />
+    </main>
   );
 }
 
 /* ---------------- sections ---------------- */
 
 function Hero() {
-  const openTypeform = useOpenApply();
   return (
     <section className="relative overflow-hidden paper-bg grain">
       <div className="relative z-10 mx-auto flex min-h-[88vh] max-w-5xl flex-col items-center justify-center px-6 pb-24 pt-36 text-center md:pt-44">
@@ -175,7 +166,7 @@ function Hero() {
           className="mb-10 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-[#e11d2a]"
         >
           <span className="h-px w-8 bg-[#e11d2a]" />
-          Founders Only — By Invitation
+          Founders Only — WhatsApp Community
           <span className="h-px w-8 bg-[#e11d2a]" />
         </motion.span>
 
@@ -200,10 +191,17 @@ function Hero() {
           initial={{ opacity: 1, y: 0 }}
           className="mt-12 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center"
         >
-          <MagneticButton onClick={openTypeform} className="w-full sm:w-auto">
-            Join the Community
-            <ArrowUpRight className="h-4 w-4" />
-          </MagneticButton>
+          <a
+            href={WHATSAPP_COMMUNITY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+          >
+            <MagneticButton className="w-full sm:w-auto">
+              Join on WhatsApp
+              <ArrowUpRight className="h-4 w-4" />
+            </MagneticButton>
+          </a>
           <a href="#inside" className="w-full sm:w-auto">
             <MagneticButton variant="ghost" strength={0.12}>
               See what's inside
@@ -217,7 +215,7 @@ function Hero() {
         >
           <span>Free to join</span>
           <span className="h-1 w-1 rounded-full bg-[#e11d2a]" />
-          <span>Reviewed personally</span>
+          <span>Founder-only conversations</span>
           <span className="h-1 w-1 rounded-full bg-[#e11d2a]" />
           <span>WhatsApp-only</span>
         </motion.div>
@@ -470,7 +468,6 @@ function FAQSection() {
 }
 
 function FinalCta() {
-  const openTypeform = useOpenApply();
   return (
     <section className="relative overflow-hidden bg-gradient-dark-accent py-28 md:py-36">
       <div className="pointer-events-none absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-[#e11d2a]/20 blur-[120px]" />
@@ -483,16 +480,19 @@ function FinalCta() {
           <span className="text-serif-italic">who get it?</span>
         </h2>
         <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-[#ffffff]/75 md:text-lg">
-          The application takes two minutes. We read every one, personally.
+          Join the private WhatsApp community and start trading notes with founders building alongside you.
         </p>
         <div className="mt-12 flex justify-center">
-          <MagneticButton
-            onClick={openTypeform}
-            className="!bg-[#ffffff] !text-[#0a0a0a] hover:!bg-[#f4f4f4] hover:!shadow-[0_18px_40px_-18px_rgba(255,255,255,0.35)]"
+          <a
+            href={WHATSAPP_COMMUNITY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Apply to Join
-            <ArrowUpRight className="h-4 w-4" />
-          </MagneticButton>
+            <MagneticButton className="!bg-[#ffffff] !text-[#0a0a0a] hover:!bg-[#f4f4f4] hover:!shadow-[0_18px_40px_-18px_rgba(255,255,255,0.35)]">
+              Join on WhatsApp
+              <ArrowUpRight className="h-4 w-4" />
+            </MagneticButton>
+          </a>
         </div>
       </div>
     </section>
@@ -500,17 +500,17 @@ function FinalCta() {
 }
 
 function StickyMobileCTA() {
-  const openTypeform = useOpenApply();
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-black/10 bg-[#ffffff]/95 px-4 py-3 backdrop-blur md:hidden">
-      <button
-        type="button"
-        onClick={openTypeform}
+      <a
+        href={WHATSAPP_COMMUNITY_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         className="flex w-full items-center justify-center gap-2 rounded-full bg-[#e11d2a] px-6 py-3.5 text-sm font-medium text-white shadow-[0_10px_30px_-12px_rgba(225,29,42,0.55)]"
       >
-        Join the Community
+        Join on WhatsApp
         <ArrowUpRight className="h-4 w-4" />
-      </button>
+      </a>
     </div>
   );
 }

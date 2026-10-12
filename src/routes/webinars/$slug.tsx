@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { openCommunityApplyDialog } from "@/components/site/ApplyDialog";
 import { getWebinar, WEBINARS, type WebinarPost } from "@/lib/webinars";
 import { getWebinarPostSchemas, createJsonLdScript } from "@/lib/seo-schema";
 import { trackEvent } from "@/lib/meta-pixel";
@@ -210,13 +209,14 @@ function WebinarDetailPage() {
                       <Play className="h-3.5 w-3.5" /> Watch on YouTube
                     </a>
                   )}
-                  <button
-                    type="button"
-                    onClick={() => openCommunityApplyDialog()}
+                  <a
+                    href="https://chat.whatsapp.com/CjNzcHLjej6BoetwplTJbQ?mode=gi_t"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full bg-[#e11d2a] px-5 py-2 text-xs font-medium text-white transition hover:bg-[#c41520]"
                   >
                     Join Community <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -348,13 +348,14 @@ function WebinarDetailPage() {
                 </p>
               </div>
               <div className="mt-8">
-                <button
-                  type="button"
-                  onClick={() => openCommunityApplyDialog()}
+                <a
+                  href="https://chat.whatsapp.com/CjNzcHLjej6BoetwplTJbQ?mode=gi_t"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-[#e11d2a] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#b8151f]"
                 >
-                  Apply to Join Free <ArrowRight className="h-4 w-4" />
-                </button>
+                  Join on WhatsApp <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
             </div>
 
