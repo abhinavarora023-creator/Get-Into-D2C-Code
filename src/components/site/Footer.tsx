@@ -1,3 +1,4 @@
+import { MapPin, Phone } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 
 export function Footer() {
@@ -13,6 +14,20 @@ export function Footer() {
             <p className="text-serif-italic mt-6 max-w-sm text-2xl leading-snug text-[#0a0a0a]/80">
               The growth studio and founder community for consumer brands.
             </p>
+            <div className="mt-7 flex flex-col gap-3 text-sm text-[#0a0a0a]/65">
+              <div className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 shrink-0 text-[#e11d2a]" strokeWidth={1.75} />
+                <span>Vasant Kunj, New Delhi, India</span>
+              </div>
+              <a
+                href="tel:+917982066052"
+                className="flex w-fit items-center gap-3 transition-colors hover:text-[#0a0a0a]"
+                aria-label="Call GetIntoD2C at 79820 66052"
+              >
+                <Phone className="h-4 w-4 shrink-0 text-[#e11d2a]" strokeWidth={1.75} />
+                <span>+91 79820 66052</span>
+              </a>
+            </div>
           </div>
           <nav className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-[#0a0a0a]/70">
             <a href="/" className="hover:text-[#0a0a0a]">Home</a>
